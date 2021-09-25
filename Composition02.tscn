@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://material/concrete.tres" type="Material" id=1]
 [ext_resource path="res://material/building1wall.tres" type="Material" id=2]
@@ -23,6 +23,11 @@
 [ext_resource path="res://material/vendingmachinetray1.tres" type="Material" id=21]
 [ext_resource path="res://material/vendingmachinetray2.tres" type="Material" id=22]
 [ext_resource path="res://material/vendingmachinecointhing.tres" type="Material" id=23]
+[ext_resource path="res://material/building2wall.tres" type="Material" id=24]
+[ext_resource path="res://material/building2door.tres" type="Material" id=25]
+[ext_resource path="res://material/building4wall.tres" type="Material" id=26]
+[ext_resource path="res://material/building4shutter.tres" type="Material" id=27]
+[ext_resource path="res://material/wall.tres" type="Material" id=28]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("TextureExperiment/Viewport")
@@ -35,9 +40,21 @@ size = Vector3( 2.54, 0.02, 0.2 )
 material = ExtResource( 18 )
 size = Vector3( 0.2, 0.05, 0.1 )
 
+[sub_resource type="CubeMesh" id=5]
+material = ExtResource( 27 )
+size = Vector3( 1.1, 0.09, 0.02 )
+
 [sub_resource type="CubeMesh" id=4]
 material = ExtResource( 23 )
 size = Vector3( 0.1, 0.06, 0.02 )
+
+[sub_resource type="CubeMesh" id=6]
+material = ExtResource( 28 )
+size = Vector3( 37, 3.8, 8.9 )
+
+[sub_resource type="CubeMesh" id=7]
+material = ExtResource( 28 )
+size = Vector3( 37, 3.8, 8.9 )
 
 [node name="Composition02" type="Spatial"]
 
@@ -79,17 +96,17 @@ __meta__ = {
 }
 
 [node name="Tunnel" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, 0 )
-width = 16.0
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, 0 )
+width = 10.0
 height = 4.0
 depth = 6.0
 material = ExtResource( 1 )
 
 [node name="CSGPolygon" type="CSGPolygon" parent="Tunnel"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8, 0, 0 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 0, 0 )
 operation = 2
 polygon = PoolVector2Array( -2.6, -2, -2.6, 0.6, -2.595, 0.615, -2.215, 1.19, -2.2, 1.2, 2.2, 1.2, 2.215, 1.19, 2.595, 0.615, 2.6, 0.6, 2.6, -2 )
-depth = 12.0
+depth = 10.0
 material = ExtResource( 1 )
 
 [node name="Trackbed" type="CSGPolygon" parent="."]
@@ -187,9 +204,9 @@ depth = 0.04
 material = ExtResource( 4 )
 
 [node name="SideFrontage" type="CSGBox" parent="Building1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75, -3.26, 7.91 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -3.26, 7.91 )
 operation = 2
-width = 1.5
+width = 1.0
 height = 2.5
 depth = 0.2
 material = ExtResource( 2 )
@@ -505,356 +522,170 @@ mesh = SubResource( 2 )
 material/0 = null
 
 [node name="Building2" type="CSGBox" parent="."]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9, 5.5, 69.5 )
-width = 12.0
-height = 11.0
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.75, 4.8, -11 )
+width = 3.0
+height = 9.6
 depth = 16.0
-material = ExtResource( 2 )
+material = ExtResource( 24 )
 
-[node name="Frontage" type="CSGBox" parent="Building2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -4, 7.75 )
-operation = 2
-width = 8.0
-height = 3.0
-depth = 0.5
-material = ExtResource( 2 )
-
-[node name="SideFrontage" type="CSGBox" parent="Building2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, -4.25, 7.9 )
+[node name="Entrance" type="CSGBox" parent="Building2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.56, 8 )
 operation = 2
 height = 2.5
 depth = 0.2
-material = ExtResource( 2 )
+material = ExtResource( 24 )
 
-[node name="CSGBox3" type="CSGBox" parent="Building2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.25, 0 )
-width = 12.3
-height = 0.5
-depth = 16.3
-material = ExtResource( 1 )
-
-[node name="CSGBox4" type="CSGBox" parent="Building2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0 )
-width = 12.3
-height = 0.5
-depth = 16.3
-material = ExtResource( 1 )
-
-[node name="CSGBox5" type="CSGBox" parent="Building2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.75, 0 )
-width = 12.3
-height = 0.5
-depth = 16.3
-material = ExtResource( 1 )
-
-[node name="CSGBox6" type="CSGBox" parent="Building2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.25, 0 )
-width = 12.6
-height = 0.5
-depth = 16.6
-material = ExtResource( 2 )
+[node name="EntranceDoor" type="CSGBox" parent="Building2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, -3.83, 7.9 )
+operation = 2
+width = 0.9
+height = 1.9
+depth = 0.1
+material = ExtResource( 25 )
 
 [node name="Window" type="CSGBox" parent="Building2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.25, 7.925 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 7.945 )
 operation = 2
-width = 1.0
-height = 1.35
-depth = 0.15
-material = ExtResource( 2 )
+width = 2.52
+height = 1.22
+depth = 0.12
+material = ExtResource( 24 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="WindowFrame" type="CSGBox" parent="Building2/Window"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.08 )
-width = 0.9
-height = 1.25
-depth = 0.02
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.05 )
+operation = 2
+width = 2.5
+height = 1.2
+depth = 0.03
 material = ExtResource( 3 )
 
 [node name="CSGBox" type="CSGBox" parent="Building2/Window/WindowFrame"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.213, 0.3, -0.02 )
-width = 0.375
-height = 0.555
-depth = 0.02
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.938, 0, 0.01 )
+operation = 2
+width = 0.525
+height = 1.1
+depth = 0.03
 material = ExtResource( 4 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building2/Window/WindowFrame"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.213, 0.3, -0.02 )
-width = 0.375
-height = 0.555
-depth = 0.02
-material = ExtResource( 4 )
-
-[node name="CSGBox3" type="CSGBox" parent="Building2/Window/WindowFrame"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.213, -0.3, -0.02 )
-width = 0.375
-height = 0.555
-depth = 0.02
-material = ExtResource( 4 )
-
-[node name="CSGBox4" type="CSGBox" parent="Building2/Window/WindowFrame"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.213, -0.3, -0.02 )
-width = 0.375
-height = 0.555
-depth = 0.02
-material = ExtResource( 4 )
-
-[node name="WindowSill" type="CSGBox" parent="Building2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -0.41, 7.925 )
-width = 1.05
-height = 0.04
-depth = 0.2
-material = ExtResource( 5 )
-
-[node name="Window2" type="CSGBox" parent="Building2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.25, 7.925 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.313, 0, 0.01 )
 operation = 2
-width = 1.0
-height = 1.35
-depth = 0.15
-material = ExtResource( 2 )
+width = 0.525
+height = 1.1
+depth = 0.03
+material = ExtResource( 4 )
 
-[node name="WindowFrame" type="CSGBox" parent="Building2/Window2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.08 )
-width = 0.9
-height = 1.25
-depth = 0.02
+[node name="WindowFrame2" type="CSGBox" parent="Building2/Window"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.313, 0, -0.02 )
+operation = 2
+width = 0.625
+height = 1.2
+depth = 0.04
 material = ExtResource( 3 )
 
-[node name="CSGBox" type="CSGBox" parent="Building2/Window2/WindowFrame"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.213, 0.3, -0.02 )
-width = 0.375
-height = 0.555
-depth = 0.02
+[node name="CSGBox" type="CSGBox" parent="Building2/Window/WindowFrame2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+operation = 2
+width = 0.525
+height = 1.1
+depth = 0.03
 material = ExtResource( 4 )
 
-[node name="CSGBox2" type="CSGBox" parent="Building2/Window2/WindowFrame"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.213, 0.3, -0.02 )
-width = 0.375
-height = 0.555
-depth = 0.02
+[node name="WindowFrame3" type="CSGBox" parent="Building2/Window"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.938, 0, -0.02 )
+operation = 2
+width = 0.625
+height = 1.2
+depth = 0.04
+material = ExtResource( 3 )
+
+[node name="CSGBox2" type="CSGBox" parent="Building2/Window/WindowFrame3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+operation = 2
+width = 0.525
+height = 1.1
+depth = 0.03
 material = ExtResource( 4 )
 
-[node name="CSGBox3" type="CSGBox" parent="Building2/Window2/WindowFrame"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.213, -0.3, -0.02 )
-width = 0.375
-height = 0.555
-depth = 0.02
-material = ExtResource( 4 )
-
-[node name="CSGBox4" type="CSGBox" parent="Building2/Window2/WindowFrame"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.213, -0.3, -0.02 )
-width = 0.375
-height = 0.555
-depth = 0.02
-material = ExtResource( 4 )
-
-[node name="WindowSill2" type="CSGBox" parent="Building2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -0.41, 7.925 )
-width = 1.05
-height = 0.04
-depth = 0.2
-material = ExtResource( 5 )
+[node name="WindowSill" type="MeshInstance" parent="Building2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.41, 7.91 )
+mesh = SubResource( 2 )
+material/0 = null
 
 [node name="Window3" type="CSGBox" parent="Building2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.25, 7.925 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9, 7.945 )
 operation = 2
-width = 1.0
-height = 1.35
-depth = 0.15
-material = ExtResource( 2 )
+width = 2.52
+height = 1.22
+depth = 0.12
+material = ExtResource( 24 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="WindowFrame" type="CSGBox" parent="Building2/Window3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.08 )
-width = 0.9
-height = 1.25
-depth = 0.02
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.05 )
+operation = 2
+width = 2.5
+height = 1.2
+depth = 0.03
 material = ExtResource( 3 )
 
 [node name="CSGBox" type="CSGBox" parent="Building2/Window3/WindowFrame"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.213, 0.3, -0.02 )
-width = 0.375
-height = 0.555
-depth = 0.02
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.938, 0, 0.01 )
+operation = 2
+width = 0.525
+height = 1.1
+depth = 0.03
 material = ExtResource( 4 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building2/Window3/WindowFrame"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.213, 0.3, -0.02 )
-width = 0.375
-height = 0.555
-depth = 0.02
-material = ExtResource( 4 )
-
-[node name="CSGBox3" type="CSGBox" parent="Building2/Window3/WindowFrame"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.213, -0.3, -0.02 )
-width = 0.375
-height = 0.555
-depth = 0.02
-material = ExtResource( 4 )
-
-[node name="CSGBox4" type="CSGBox" parent="Building2/Window3/WindowFrame"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.213, -0.3, -0.02 )
-width = 0.375
-height = 0.555
-depth = 0.02
-material = ExtResource( 4 )
-
-[node name="WindowSill3" type="CSGBox" parent="Building2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.41, 7.925 )
-width = 1.05
-height = 0.04
-depth = 0.2
-material = ExtResource( 5 )
-
-[node name="Window4" type="CSGBox" parent="Building2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.25, 7.925 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.313, 0, 0.01 )
 operation = 2
-width = 1.0
-height = 1.35
-depth = 0.15
-material = ExtResource( 2 )
+width = 0.525
+height = 1.1
+depth = 0.03
+material = ExtResource( 4 )
 
-[node name="WindowFrame" type="CSGBox" parent="Building2/Window4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.08 )
-width = 0.9
-height = 1.25
-depth = 0.02
+[node name="WindowFrame2" type="CSGBox" parent="Building2/Window3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.313, 0, -0.02 )
+operation = 2
+width = 0.625
+height = 1.2
+depth = 0.04
 material = ExtResource( 3 )
 
-[node name="CSGBox" type="CSGBox" parent="Building2/Window4/WindowFrame"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.213, 0.3, -0.02 )
-width = 0.375
-height = 0.555
-depth = 0.02
-material = ExtResource( 4 )
-
-[node name="CSGBox2" type="CSGBox" parent="Building2/Window4/WindowFrame"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.213, 0.3, -0.02 )
-width = 0.375
-height = 0.555
-depth = 0.02
-material = ExtResource( 4 )
-
-[node name="CSGBox3" type="CSGBox" parent="Building2/Window4/WindowFrame"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.213, -0.3, -0.02 )
-width = 0.375
-height = 0.555
-depth = 0.02
-material = ExtResource( 4 )
-
-[node name="CSGBox4" type="CSGBox" parent="Building2/Window4/WindowFrame"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.213, -0.3, -0.02 )
-width = 0.375
-height = 0.555
-depth = 0.02
-material = ExtResource( 4 )
-
-[node name="WindowSill4" type="CSGBox" parent="Building2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.41, 7.925 )
-width = 1.05
-height = 0.04
-depth = 0.2
-material = ExtResource( 5 )
-
-[node name="Window5" type="CSGBox" parent="Building2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.25, 7.925 )
+[node name="CSGBox" type="CSGBox" parent="Building2/Window3/WindowFrame2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
 operation = 2
-width = 1.0
-height = 1.35
-depth = 0.15
-material = ExtResource( 2 )
+width = 0.525
+height = 1.1
+depth = 0.03
+material = ExtResource( 4 )
 
-[node name="WindowFrame" type="CSGBox" parent="Building2/Window5"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.08 )
-width = 0.9
-height = 1.25
-depth = 0.02
+[node name="WindowFrame3" type="CSGBox" parent="Building2/Window3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.938, 0, -0.02 )
+operation = 2
+width = 0.625
+height = 1.2
+depth = 0.04
 material = ExtResource( 3 )
 
-[node name="CSGBox" type="CSGBox" parent="Building2/Window5/WindowFrame"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.213, 0.3, -0.02 )
-width = 0.375
-height = 0.555
-depth = 0.02
-material = ExtResource( 4 )
-
-[node name="CSGBox2" type="CSGBox" parent="Building2/Window5/WindowFrame"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.213, 0.3, -0.02 )
-width = 0.375
-height = 0.555
-depth = 0.02
-material = ExtResource( 4 )
-
-[node name="CSGBox3" type="CSGBox" parent="Building2/Window5/WindowFrame"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.213, -0.3, -0.02 )
-width = 0.375
-height = 0.555
-depth = 0.02
-material = ExtResource( 4 )
-
-[node name="CSGBox4" type="CSGBox" parent="Building2/Window5/WindowFrame"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.213, -0.3, -0.02 )
-width = 0.375
-height = 0.555
-depth = 0.02
-material = ExtResource( 4 )
-
-[node name="WindowSill5" type="CSGBox" parent="Building2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -0.41, 7.925 )
-width = 1.05
-height = 0.04
-depth = 0.2
-material = ExtResource( 5 )
-
-[node name="Window6" type="CSGBox" parent="Building2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.25, 7.925 )
+[node name="CSGBox2" type="CSGBox" parent="Building2/Window3/WindowFrame3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
 operation = 2
-width = 1.0
-height = 1.35
-depth = 0.15
-material = ExtResource( 2 )
-
-[node name="WindowFrame" type="CSGBox" parent="Building2/Window6"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.08 )
-width = 0.9
-height = 1.25
-depth = 0.02
-material = ExtResource( 3 )
-
-[node name="CSGBox" type="CSGBox" parent="Building2/Window6/WindowFrame"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.213, 0.3, -0.02 )
-width = 0.375
-height = 0.555
-depth = 0.02
+width = 0.525
+height = 1.1
+depth = 0.03
 material = ExtResource( 4 )
 
-[node name="CSGBox2" type="CSGBox" parent="Building2/Window6/WindowFrame"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.213, 0.3, -0.02 )
-width = 0.375
-height = 0.555
-depth = 0.02
-material = ExtResource( 4 )
-
-[node name="CSGBox3" type="CSGBox" parent="Building2/Window6/WindowFrame"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.213, -0.3, -0.02 )
-width = 0.375
-height = 0.555
-depth = 0.02
-material = ExtResource( 4 )
-
-[node name="CSGBox4" type="CSGBox" parent="Building2/Window6/WindowFrame"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.213, -0.3, -0.02 )
-width = 0.375
-height = 0.555
-depth = 0.02
-material = ExtResource( 4 )
-
-[node name="WindowSill6" type="CSGBox" parent="Building2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -0.41, 7.925 )
-width = 1.05
-height = 0.04
-depth = 0.2
-material = ExtResource( 5 )
-
-[node name="Spatial" type="Spatial" parent="Building2"]
+[node name="WindowSill3" type="MeshInstance" parent="Building2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.29, 7.91 )
+mesh = SubResource( 2 )
+material/0 = null
 
 [node name="OmniLight" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 3.5, 5 )
@@ -1661,6 +1492,59 @@ transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 7
 mesh = SubResource( 3 )
 material/0 = null
 
+[node name="Window11Outer" type="CSGBox" parent="Building3"]
+transform = Transform( 1, 0, 1.58932e-08, 0, 1, 0, -1.58932e-08, 0, 1, 4.55, -3.15, 2.5 )
+width = 1.76
+height = 0.96
+depth = 0.02
+material = ExtResource( 18 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Window11" type="CSGBox" parent="Building3"]
+transform = Transform( 1, 0, 1.58932e-08, 0, 1, 0, -1.58932e-08, 0, 1, 4.55, -3.15, 2.5 )
+operation = 2
+width = 1.71
+height = 0.91
+depth = 0.12
+material = ExtResource( 18 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Spatial" type="Spatial" parent="Building3/Window11"]
+
+[node name="WindowFrame" type="CSGBox" parent="Building3/Window11/Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0500002 )
+width = 1.7
+height = 0.902
+depth = 0.03
+material = ExtResource( 18 )
+
+[node name="CSGBox2" type="CSGBox" parent="Building3/Window11/Spatial/WindowFrame"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.425, 0, 0.01 )
+operation = 2
+width = 0.75
+height = 0.8
+depth = 0.03
+material = ExtResource( 4 )
+
+[node name="WindowFrame3" type="CSGBox" parent="Building3/Window11/Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.425, 0, -0.02 )
+width = 0.85
+height = 0.9
+depth = 0.04
+material = ExtResource( 18 )
+
+[node name="CSGBox2" type="CSGBox" parent="Building3/Window11/Spatial/WindowFrame3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+operation = 2
+width = 0.75
+height = 0.8
+depth = 0.03
+material = ExtResource( 4 )
+
 [node name="Building3Pillars" type="CSGBox" parent="."]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 4.5, 13 )
 width = 16.06
@@ -1753,6 +1637,529 @@ width = 4.175
 height = 5.0
 depth = 5.0
 material = ExtResource( 10 )
+
+[node name="Building4" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.45, 3, -2.5 )
+width = 8.0
+height = 6.0
+depth = 16.0
+material = ExtResource( 26 )
+
+[node name="CSGBox" type="CSGBox" parent="Building4"]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -4, 0, 8 )
+operation = 2
+width = 3.0
+height = 6.0
+depth = 2.5
+material = ExtResource( 26 )
+
+[node name="Frontage" type="CSGBox" parent="Building4"]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -3.12, -2, 7.12 )
+operation = 2
+width = 1.1
+depth = 0.3
+material = ExtResource( 26 )
+
+[node name="Shutter" type="CSGBox" parent="Building4/Frontage"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.15 )
+width = 1.1
+depth = 0.04
+material = ExtResource( 27 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building4/Frontage/Shutter"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.95, -0.00999832 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Building4/Frontage/Shutter"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.85, -0.00999832 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Building4/Frontage/Shutter"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, -0.00999832 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Building4/Frontage/Shutter"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.65, -0.00999832 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Building4/Frontage/Shutter"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.55, -0.00999832 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Building4/Frontage/Shutter"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.45, -0.00999832 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="Building4/Frontage/Shutter"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35, -0.00999832 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance8" type="MeshInstance" parent="Building4/Frontage/Shutter"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, -0.00999832 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance9" type="MeshInstance" parent="Building4/Frontage/Shutter"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, -0.00999832 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance10" type="MeshInstance" parent="Building4/Frontage/Shutter"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0500001, -0.00999832 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance11" type="MeshInstance" parent="Building4/Frontage/Shutter"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, -0.00999832 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance12" type="MeshInstance" parent="Building4/Frontage/Shutter"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, -0.00999832 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance13" type="MeshInstance" parent="Building4/Frontage/Shutter"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, -0.00999832 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance14" type="MeshInstance" parent="Building4/Frontage/Shutter"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, -0.00999832 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance15" type="MeshInstance" parent="Building4/Frontage/Shutter"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, -0.00999832 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance16" type="MeshInstance" parent="Building4/Frontage/Shutter"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, -0.00999832 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance17" type="MeshInstance" parent="Building4/Frontage/Shutter"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, -0.00999832 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance18" type="MeshInstance" parent="Building4/Frontage/Shutter"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, -0.00999832 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance19" type="MeshInstance" parent="Building4/Frontage/Shutter"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, -0.00999832 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance20" type="MeshInstance" parent="Building4/Frontage/Shutter"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.53674e-07, 0.95, -0.00999928 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="Window1" type="CSGBox" parent="Building4"]
+transform = Transform( 1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, -0.75, -1.5, 7.98 )
+operation = 2
+width = 1.98
+height = 1.22
+depth = 0.12
+material = ExtResource( 26 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Spatial" type="Spatial" parent="Building4/Window1"]
+
+[node name="WindowFrame" type="CSGBox" parent="Building4/Window1/Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0500002 )
+width = 1.96
+height = 1.2
+depth = 0.03
+material = ExtResource( 3 )
+
+[node name="CSGBox2" type="CSGBox" parent="Building4/Window1/Spatial/WindowFrame"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49, 0, 0.01 )
+operation = 2
+width = 0.88
+height = 1.1
+depth = 0.03
+material = ExtResource( 4 )
+
+[node name="WindowFrame3" type="CSGBox" parent="Building4/Window1/Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49, 0, -0.02 )
+width = 0.98
+height = 1.2
+depth = 0.04
+material = ExtResource( 3 )
+
+[node name="CSGBox2" type="CSGBox" parent="Building4/Window1/Spatial/WindowFrame3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+operation = 2
+width = 0.88
+height = 1.1
+depth = 0.03
+material = ExtResource( 4 )
+
+[node name="Window2" type="CSGBox" parent="Building4"]
+transform = Transform( 1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, 2.25, -1.5, 7.98 )
+operation = 2
+width = 1.98
+height = 1.22
+depth = 0.12
+material = ExtResource( 26 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Spatial" type="Spatial" parent="Building4/Window2"]
+
+[node name="WindowFrame" type="CSGBox" parent="Building4/Window2/Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0500002 )
+width = 1.96
+height = 1.2
+depth = 0.03
+material = ExtResource( 3 )
+
+[node name="CSGBox2" type="CSGBox" parent="Building4/Window2/Spatial/WindowFrame"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49, 0, 0.01 )
+operation = 2
+width = 0.88
+height = 1.1
+depth = 0.03
+material = ExtResource( 4 )
+
+[node name="WindowFrame3" type="CSGBox" parent="Building4/Window2/Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49, 0, -0.02 )
+width = 0.98
+height = 1.2
+depth = 0.04
+material = ExtResource( 3 )
+
+[node name="CSGBox2" type="CSGBox" parent="Building4/Window2/Spatial/WindowFrame3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+operation = 2
+width = 0.88
+height = 1.1
+depth = 0.03
+material = ExtResource( 4 )
+
+[node name="Window3" type="CSGBox" parent="Building4"]
+transform = Transform( 1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, -0.75, 1.5, 7.98 )
+operation = 2
+width = 1.98
+height = 1.22
+depth = 0.12
+material = ExtResource( 26 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Spatial" type="Spatial" parent="Building4/Window3"]
+
+[node name="WindowFrame" type="CSGBox" parent="Building4/Window3/Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0500002 )
+width = 1.96
+height = 1.2
+depth = 0.03
+material = ExtResource( 3 )
+
+[node name="CSGBox2" type="CSGBox" parent="Building4/Window3/Spatial/WindowFrame"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49, 0, 0.01 )
+operation = 2
+width = 0.88
+height = 1.1
+depth = 0.03
+material = ExtResource( 4 )
+
+[node name="WindowFrame3" type="CSGBox" parent="Building4/Window3/Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49, 0, -0.02 )
+width = 0.98
+height = 1.2
+depth = 0.04
+material = ExtResource( 3 )
+
+[node name="CSGBox2" type="CSGBox" parent="Building4/Window3/Spatial/WindowFrame3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+operation = 2
+width = 0.88
+height = 1.1
+depth = 0.03
+material = ExtResource( 4 )
+
+[node name="Window4" type="CSGBox" parent="Building4"]
+transform = Transform( 1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, 2.25, 1.5, 7.98 )
+operation = 2
+width = 1.98
+height = 1.22
+depth = 0.12
+material = ExtResource( 26 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Spatial" type="Spatial" parent="Building4/Window4"]
+
+[node name="WindowFrame" type="CSGBox" parent="Building4/Window4/Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0500002 )
+width = 1.96
+height = 1.2
+depth = 0.03
+material = ExtResource( 3 )
+
+[node name="CSGBox2" type="CSGBox" parent="Building4/Window4/Spatial/WindowFrame"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49, 0, 0.01 )
+operation = 2
+width = 0.88
+height = 1.1
+depth = 0.03
+material = ExtResource( 4 )
+
+[node name="WindowFrame3" type="CSGBox" parent="Building4/Window4/Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49, 0, -0.02 )
+width = 0.98
+height = 1.2
+depth = 0.04
+material = ExtResource( 3 )
+
+[node name="CSGBox2" type="CSGBox" parent="Building4/Window4/Spatial/WindowFrame3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+operation = 2
+width = 0.88
+height = 1.1
+depth = 0.03
+material = ExtResource( 4 )
+
+[node name="Window5" type="CSGBox" parent="Building4"]
+transform = Transform( 1.58932e-08, 0, -1, 0, 1, 0, 1, 0, 1.58932e-08, -3.98, -1.5, 1 )
+operation = 2
+width = 1.98
+height = 1.22
+depth = 0.12
+material = ExtResource( 26 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Spatial" type="Spatial" parent="Building4/Window5"]
+
+[node name="WindowFrame" type="CSGBox" parent="Building4/Window5/Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0500002 )
+width = 1.96
+height = 1.2
+depth = 0.03
+material = ExtResource( 3 )
+
+[node name="CSGBox2" type="CSGBox" parent="Building4/Window5/Spatial/WindowFrame"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49, 0, 0.01 )
+operation = 2
+width = 0.88
+height = 1.1
+depth = 0.03
+material = ExtResource( 4 )
+
+[node name="WindowFrame3" type="CSGBox" parent="Building4/Window5/Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49, 0, -0.02 )
+width = 0.98
+height = 1.2
+depth = 0.04
+material = ExtResource( 3 )
+
+[node name="CSGBox2" type="CSGBox" parent="Building4/Window5/Spatial/WindowFrame3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+operation = 2
+width = 0.88
+height = 1.1
+depth = 0.03
+material = ExtResource( 4 )
+
+[node name="Window6" type="CSGBox" parent="Building4"]
+transform = Transform( 1.58932e-08, 0, -1, 0, 1, 0, 1, 0, 1.58932e-08, -3.98, -1.5, 4.75 )
+operation = 2
+width = 1.98
+height = 1.22
+depth = 0.12
+material = ExtResource( 26 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Spatial" type="Spatial" parent="Building4/Window6"]
+
+[node name="WindowFrame" type="CSGBox" parent="Building4/Window6/Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0500002 )
+width = 1.96
+height = 1.2
+depth = 0.03
+material = ExtResource( 3 )
+
+[node name="CSGBox2" type="CSGBox" parent="Building4/Window6/Spatial/WindowFrame"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49, 0, 0.01 )
+operation = 2
+width = 0.88
+height = 1.1
+depth = 0.03
+material = ExtResource( 4 )
+
+[node name="WindowFrame3" type="CSGBox" parent="Building4/Window6/Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49, 0, -0.02 )
+width = 0.98
+height = 1.2
+depth = 0.04
+material = ExtResource( 3 )
+
+[node name="CSGBox2" type="CSGBox" parent="Building4/Window6/Spatial/WindowFrame3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+operation = 2
+width = 0.88
+height = 1.1
+depth = 0.03
+material = ExtResource( 4 )
+
+[node name="Window7" type="CSGBox" parent="Building4"]
+transform = Transform( 1.58932e-08, 0, -1, 0, 1, 0, 1, 0, 1.58932e-08, -3.98, 1.5, 1 )
+operation = 2
+width = 1.98
+height = 1.22
+depth = 0.12
+material = ExtResource( 26 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Spatial" type="Spatial" parent="Building4/Window7"]
+
+[node name="WindowFrame" type="CSGBox" parent="Building4/Window7/Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0500002 )
+width = 1.96
+height = 1.2
+depth = 0.03
+material = ExtResource( 3 )
+
+[node name="CSGBox2" type="CSGBox" parent="Building4/Window7/Spatial/WindowFrame"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49, 0, 0.01 )
+operation = 2
+width = 0.88
+height = 1.1
+depth = 0.03
+material = ExtResource( 4 )
+
+[node name="WindowFrame3" type="CSGBox" parent="Building4/Window7/Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49, 0, -0.02 )
+width = 0.98
+height = 1.2
+depth = 0.04
+material = ExtResource( 3 )
+
+[node name="CSGBox2" type="CSGBox" parent="Building4/Window7/Spatial/WindowFrame3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+operation = 2
+width = 0.88
+height = 1.1
+depth = 0.03
+material = ExtResource( 4 )
+
+[node name="Window8" type="CSGBox" parent="Building4"]
+transform = Transform( 1.58932e-08, 0, -1, 0, 1, 0, 1, 0, 1.58932e-08, -3.98, 1.5, 4.75 )
+operation = 2
+width = 1.98
+height = 1.22
+depth = 0.12
+material = ExtResource( 26 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Spatial" type="Spatial" parent="Building4/Window8"]
+
+[node name="WindowFrame" type="CSGBox" parent="Building4/Window8/Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0500002 )
+width = 1.96
+height = 1.2
+depth = 0.03
+material = ExtResource( 3 )
+
+[node name="CSGBox2" type="CSGBox" parent="Building4/Window8/Spatial/WindowFrame"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49, 0, 0.01 )
+operation = 2
+width = 0.88
+height = 1.1
+depth = 0.03
+material = ExtResource( 4 )
+
+[node name="WindowFrame3" type="CSGBox" parent="Building4/Window8/Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49, 0, -0.02 )
+width = 0.98
+height = 1.2
+depth = 0.04
+material = ExtResource( 3 )
+
+[node name="CSGBox2" type="CSGBox" parent="Building4/Window8/Spatial/WindowFrame3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+operation = 2
+width = 0.88
+height = 1.1
+depth = 0.03
+material = ExtResource( 4 )
+
+[node name="Window9" type="CSGBox" parent="Building4"]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -3.1, 1.5, 7.1 )
+operation = 2
+width = 1.72
+height = 1.22
+depth = 0.12
+material = ExtResource( 26 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Spatial" type="Spatial" parent="Building4/Window9"]
+
+[node name="WindowFrame" type="CSGBox" parent="Building4/Window9/Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0500002 )
+width = 1.7
+height = 1.2
+depth = 0.03
+material = ExtResource( 3 )
+
+[node name="CSGBox2" type="CSGBox" parent="Building4/Window9/Spatial/WindowFrame"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.425, 0, 0.01 )
+operation = 2
+width = 0.75
+height = 1.1
+depth = 0.03
+material = ExtResource( 4 )
+
+[node name="WindowFrame3" type="CSGBox" parent="Building4/Window9/Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.425, 0, -0.02 )
+width = 0.85
+height = 1.2
+depth = 0.04
+material = ExtResource( 3 )
+
+[node name="CSGBox2" type="CSGBox" parent="Building4/Window9/Spatial/WindowFrame3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+operation = 2
+width = 0.75
+height = 1.1
+depth = 0.03
+material = ExtResource( 4 )
+
+[node name="Door" type="CSGBox" parent="Building4"]
+transform = Transform( -2.98023e-08, 0, -1, 0, 1, 0, 1, 0, -2.98023e-08, -4, -2.03, 2.55 )
+operation = 2
+width = 0.9
+height = 1.9
+depth = 0.1
+material = ExtResource( 3 )
 
 [node name="VendingMachine" type="CSGBox" parent="."]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.95, 0.87, 10.8 )
@@ -2035,6 +2442,16 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19209e-06, 4.8, -1.1 )
 mesh = ExtResource( 13 )
 material/0 = null
 
+[node name="Wall1" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 1.9, 21.5 )
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="Wall2" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 1.9, -21.5 )
+mesh = SubResource( 7 )
+material/0 = null
+
 [node name="Terrain" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 width = 80.0
@@ -2096,3 +2513,27 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5 )
 operation = 2
 height = 1.0
 depth = 1.0
+
+[node name="Street3" type="CSGBox" parent="Terrain"]
+transform = Transform( -1.58932e-08, 0, 1, 0, 1, 0, -1, 0, -1.58932e-08, 20, 1, 8.39 )
+operation = 2
+width = 5.0
+height = 0.1
+depth = 12.0
+material = ExtResource( 17 )
+
+[node name="StreetBevelCorner1" type="CSGBox" parent="Terrain"]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 15, 1, 5.89 )
+operation = 2
+width = 3.0
+height = 0.1
+depth = 2.5
+material = ExtResource( 17 )
+
+[node name="StreetBevelCorner2" type="CSGBox" parent="Terrain"]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 15, 1, 10.89 )
+operation = 2
+width = 3.0
+height = 0.1
+depth = 2.5
+material = ExtResource( 17 )
