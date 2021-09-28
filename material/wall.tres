@@ -1,5 +1,14 @@
-[gd_resource type="SpatialMaterial" format=2]
+[gd_resource type="SpatialMaterial" load_steps=3 format=2]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.08, 0.166, 0.22, 0.333, 0.5, 0.666, 0.833, 1 )
+colors = PoolColorArray( 0.6, 0.5296, 0.504, 1, 0.9, 0.8472, 0.828, 1, 0.941176, 0.941176, 0.941176, 1, 0.91, 0.91, 0.91, 1, 0.8, 0.764706, 0.752941, 1, 0.8, 0.8, 0.8, 1, 0.8, 0.8, 0.8, 1, 1, 1, 1, 1, 0.52549, 0.396078, 0.34902, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+width = 1024
 
 [resource]
-albedo_color = Color( 0.4, 0.306667, 0.26, 1 )
+albedo_color = Color( 0.86, 0.817, 0.774, 1 )
+albedo_texture = SubResource( 2 )
 metallic_specular = 0.35
