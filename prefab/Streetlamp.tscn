@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://material/streetlamp.tres" type="Material" id=1]
+[ext_resource path="res://material/streetlamplight.tres" type="Material" id=2]
+
+[sub_resource type="CylinderMesh" id=16]
+material = ExtResource( 1 )
+top_radius = 0.04
+bottom_radius = 0.04
+height = 0.4
+radial_segments = 8
+rings = 1
+
+[sub_resource type="Curve3D" id=17]
+bake_interval = 0.05
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 0.018136, 0.130579, -5, 0, 0, 0, 0, 0, 0, 0.0211105, 0.246106, -5, 0, 0, 0, 0, 0, 0, 0.0348644, 0.290578, -5, 0, 0, 0, 0, 0, 0, 0.0733757, 0.326338, -5, 0, 0, 0, 0, 0, 0, 0.108678, 0.342843, -5, 0, 0, 0, 0, 0, 0, 0.389719, 0.395109, -5 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="CapsuleMesh" id=18]
+material = ExtResource( 2 )
+radius = 0.08
+mid_height = 0.102
+radial_segments = 12
+rings = 1
+
+[node name="Streetlamp" type="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12, 0, 0 )
+mesh = SubResource( 16 )
+material/0 = null
+
+[node name="Path" type="Path" parent="."]
+transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 1, 0, 0.025, 4.98 )
+curve = SubResource( 17 )
+
+[node name="CSGPolygon" type="CSGPolygon" parent="."]
+invert_faces = true
+polygon = PoolVector2Array( 0.000617027, 0.012341, 0.0121584, 0.00041461, 0.0263748, 0.000742435, 0.0372028, 0.0123832, 0.0369177, 0.0265505, 0.0269585, 0.0367777, 0.00978851, 0.0377073, 0.000496864, 0.027457 )
+mode = 2
+path_node = NodePath("../Path")
+path_interval = 0.025
+path_rotation = 2
+path_local = false
+path_continuous_u = false
+path_joined = false
+smooth_faces = true
+material = ExtResource( 1 )
+
+[node name="CSGPolygon2" type="CSGPolygon" parent="."]
+transform = Transform( 0.984808, 6.64073e-10, -0.173648, 0.173648, -7.5904e-09, 0.984808, -6.64073e-10, -1, -7.5904e-09, 0.172, 0.341, 0.208 )
+polygon = PoolVector2Array( 0.0663319, 0.26675, 0.0648766, 0.150344, 0.31536, 0.100705, 0.386642, 0.0973101, 0.453681, 0.104948, 0.48508, 0.140588, 0.495262, 0.175381, 0.495262, 0.212719, 0.485928, 0.258543, 0.449438, 0.300124, 0.386642, 0.316247, 0.311966, 0.312853 )
+depth = 0.05
+material = ExtResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, -0.0695866, 0.990268, 0, 0.495134, 0.139173, -1, 3.04172e-09, -4.3286e-08, 0.514, 0.348, 0.002 )
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="SpotLight" type="SpotLight" parent="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, -0.130526, 1.98289, 0, -0.991445, -0.261053, 0, -0.15, 0 )
+light_color = Color( 1, 0.696667, 0.48, 1 )
+shadow_enabled = true
+shadow_reverse_cull_face = true
+spot_range = 8.0
+spot_attenuation = 1.5
+spot_angle = 80.0
