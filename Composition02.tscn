@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=73 format=2]
 
 [ext_resource path="res://material/concrete.tres" type="Material" id=1]
 [ext_resource path="res://material/building1wall.tres" type="Material" id=2]
@@ -36,10 +36,15 @@
 [ext_resource path="res://mesh/fencestrut4.tres" type="QuadMesh" id=34]
 [ext_resource path="res://material/post.tres" type="Material" id=35]
 [ext_resource path="res://prefab/Streetlamp.tscn" type="PackedScene" id=36]
-[ext_resource path="res://night_env.tres" type="Environment" id=38]
-
-[sub_resource type="ViewportTexture" id=1]
-viewport_path = NodePath("TextureExperiment/Viewport")
+[ext_resource path="res://material/building3hvac.tres" type="Material" id=37]
+[ext_resource path="res://material/bench.tres" type="Material" id=38]
+[ext_resource path="res://prefab/SmallLamp.tscn" type="PackedScene" id=39]
+[ext_resource path="res://material/bikerack.tres" type="Material" id=40]
+[ext_resource path="res://material/bin.tres" type="Material" id=41]
+[ext_resource path="res://material/binbag.tres" type="Material" id=42]
+[ext_resource path="res://material/building4doorsign.tres" type="Material" id=43]
+[ext_resource path="res://material/building4doorsignplate.tres" type="Material" id=44]
+[ext_resource path="res://material/binlarge.tres" type="Material" id=45]
 
 [sub_resource type="CubeMesh" id=2]
 material = ExtResource( 5 )
@@ -49,9 +54,37 @@ size = Vector3( 2.54, 0.02, 0.2 )
 material = ExtResource( 18 )
 size = Vector3( 0.2, 0.05, 0.1 )
 
+[sub_resource type="CubeMesh" id=15]
+material = ExtResource( 37 )
+size = Vector3( 0.8, 0.5, 0.06 )
+
+[sub_resource type="CubeMesh" id=16]
+material = ExtResource( 37 )
+size = Vector3( 0.72, 0.42, 0.4 )
+
+[sub_resource type="CubeMesh" id=17]
+material = ExtResource( 37 )
+size = Vector3( 0.72, 0.42, 0.457 )
+
+[sub_resource type="CubeMesh" id=18]
+material = ExtResource( 37 )
+size = Vector3( 0.72, 0.42, 2 )
+
+[sub_resource type="CubeMesh" id=19]
+material = ExtResource( 37 )
+size = Vector3( 1.8, 1, 0.6 )
+
 [sub_resource type="CubeMesh" id=4]
 material = ExtResource( 27 )
 size = Vector3( 1.1, 0.09, 0.02 )
+
+[sub_resource type="CubeMesh" id=27]
+material = ExtResource( 43 )
+size = Vector3( 0.3, 0.5, 0.04 )
+
+[sub_resource type="CubeMesh" id=28]
+material = ExtResource( 44 )
+size = Vector3( 0.26, 0.46, 0.05 )
 
 [sub_resource type="CubeMesh" id=5]
 material = ExtResource( 23 )
@@ -65,81 +98,72 @@ size = Vector3( 0.06, 6, 0.06 )
 material = ExtResource( 32 )
 size = Vector3( 0.06, 0.06, 3.05 )
 
-[sub_resource type="CubeMesh" id=9]
+[sub_resource type="CubeMesh" id=8]
 material = ExtResource( 32 )
 size = Vector3( 0.06, 0.06, 1.5 )
 
-[sub_resource type="CubeMesh" id=14]
+[sub_resource type="CubeMesh" id=9]
 material = ExtResource( 32 )
 size = Vector3( 0.06, 4, 0.06 )
 
-[sub_resource type="CubeMesh" id=13]
+[sub_resource type="CubeMesh" id=10]
 material = ExtResource( 32 )
 size = Vector3( 0.69, 0.35, 0.04 )
 
-[sub_resource type="CubeMesh" id=10]
+[sub_resource type="CubeMesh" id=11]
 material = ExtResource( 32 )
 size = Vector3( 0.69, 0.04, 0.04 )
 
-[sub_resource type="CubeMesh" id=11]
+[sub_resource type="CubeMesh" id=12]
 material = ExtResource( 32 )
 size = Vector3( 0.04, 1.85, 0.04 )
 
-[sub_resource type="QuadMesh" id=12]
+[sub_resource type="QuadMesh" id=13]
 material = ExtResource( 32 )
 size = Vector2( 0.02, 1.85 )
 
-[sub_resource type="CylinderMesh" id=15]
+[sub_resource type="CylinderMesh" id=14]
 material = ExtResource( 35 )
 top_radius = 0.08
 bottom_radius = 0.08
 height = 5.0
 radial_segments = 32
 
+[sub_resource type="CubeMesh" id=20]
+material = ExtResource( 40 )
+size = Vector3( 0.06, 0.75, 0.06 )
+
+[sub_resource type="CubeMesh" id=22]
+material = ExtResource( 40 )
+size = Vector3( 0.73, 0.06, 0.06 )
+
+[sub_resource type="CubeMesh" id=21]
+material = ExtResource( 40 )
+size = Vector3( 0.06, 0.55, 0.06 )
+
+[sub_resource type="CubeMesh" id=23]
+material = ExtResource( 38 )
+size = Vector3( 1.5, 0.04, 0.3 )
+
+[sub_resource type="CubeMesh" id=24]
+material = ExtResource( 38 )
+size = Vector3( 1.5, 0.04, 0.2 )
+
+[sub_resource type="CubeMesh" id=25]
+material = ExtResource( 1 )
+size = Vector3( 0.1, 0.4, 0.25 )
+
+[sub_resource type="CubeMesh" id=26]
+material = ExtResource( 1 )
+size = Vector3( 0.1, 0.45, 0.1 )
+
 [node name="Composition02" type="Spatial"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource( 38 )
-
-[node name="TextureExperiment" type="Control" parent="."]
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Viewport" type="Viewport" parent="TextureExperiment"]
-size = Vector2( 1024, 1024 )
-render_target_v_flip = true
-render_target_update_mode = 1
-
-[node name="ColorRect" type="ColorRect" parent="TextureExperiment/Viewport"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0.14902, 0.12549, 0.207843, 1 )
-
-[node name="ColorRect2" type="ColorRect" parent="TextureExperiment/Viewport"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 512.0
-margin_bottom = -512.0
-color = Color( 0.654902, 0.329412, 0.654902, 1 )
-
-[node name="ColorRect3" type="ColorRect" parent="TextureExperiment/Viewport"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 512.0
-margin_right = -512.0
-color = Color( 0.654902, 0.329412, 0.654902, 1 )
-
-[node name="TextureRect" type="TextureRect" parent="TextureExperiment"]
-margin_right = 40.0
-margin_bottom = 40.0
-texture = SubResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Tunnel" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.9, 0 )
+use_in_baked_light = true
 width = 8.8
 height = 3.8
 depth = 6.0
@@ -150,6 +174,7 @@ __meta__ = {
 
 [node name="CSGPolygon" type="CSGPolygon" parent="Tunnel"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.4, 0.1, 0 )
+use_in_baked_light = true
 operation = 2
 polygon = PoolVector2Array( -2.6, -2, -2.6, 0.6, -2.595, 0.615, -2.215, 1.19, -2.2, 1.2, 2.2, 1.2, 2.215, 1.19, 2.595, 0.615, 2.6, 0.6, 2.6, -2 )
 depth = 8.8
@@ -157,12 +182,14 @@ material = ExtResource( 1 )
 
 [node name="Trackbed" type="CSGPolygon" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3.8, 40 )
+use_in_baked_light = true
 polygon = PoolVector2Array( -4.8, 0.75, -4.8, 1.25, 4.8, 1.25, 4.8, 0.75, 4.2, 0, -4.2, 0 )
 depth = 120.0
 material = ExtResource( 1 )
 
 [node name="Building1" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4.5, -10.8 )
+use_in_baked_light = true
 width = 8.0
 height = 9.0
 depth = 16.0
@@ -173,6 +200,7 @@ __meta__ = {
 
 [node name="FrontageFrame" type="CSGBox" parent="Building1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.01, -3, 7.65 )
+use_in_baked_light = true
 width = 6.0
 height = 3.0
 depth = 0.75
@@ -180,6 +208,7 @@ material = ExtResource( 6 )
 
 [node name="Frontage" type="CSGBox" parent="Building1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -3.27, 7.84 )
+use_in_baked_light = true
 operation = 2
 width = 5.0
 height = 2.5
@@ -188,12 +217,14 @@ material = ExtResource( 6 )
 
 [node name="FrontageWindowFrame1" type="CSGBox" parent="Building1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.06, -3.02, 7.63 )
+use_in_baked_light = true
 width = 2.9
 depth = 0.04
 material = ExtResource( 8 )
 
 [node name="FrontageWindowFrame2" type="CSGBox" parent="Building1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.24, 7.63 )
+use_in_baked_light = true
 width = 1.22
 height = 0.45
 depth = 0.04
@@ -201,12 +232,14 @@ material = ExtResource( 8 )
 
 [node name="FrontageWindowFrame3" type="CSGBox" parent="Building1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.06, -3.02, 7.63 )
+use_in_baked_light = true
 width = 0.9
 depth = 0.04
 material = ExtResource( 8 )
 
 [node name="FrontageWindow1" type="CSGBox" parent="Building1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.76, -3.22, 7.65 )
+use_in_baked_light = true
 operation = 2
 width = 1.36
 height = 1.5
@@ -215,6 +248,7 @@ material = ExtResource( 4 )
 
 [node name="FrontageWindow2" type="CSGBox" parent="Building1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.34, -3.22, 7.65 )
+use_in_baked_light = true
 operation = 2
 width = 1.36
 height = 1.5
@@ -223,6 +257,7 @@ material = ExtResource( 4 )
 
 [node name="FrontageWindow3" type="CSGBox" parent="Building1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05, -3.22, 7.65 )
+use_in_baked_light = true
 operation = 2
 width = 0.78
 height = 1.5
@@ -231,6 +266,7 @@ material = ExtResource( 4 )
 
 [node name="FrontageDoorway" type="CSGBox" parent="Building1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.5, 7.44 )
+use_in_baked_light = true
 operation = 2
 width = 1.2
 height = 2.04
@@ -239,6 +275,7 @@ material = ExtResource( 6 )
 
 [node name="FrontageDoor" type="CSGBox" parent="Building1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.53, 7.04 )
+use_in_baked_light = true
 operation = 2
 width = 1.05
 height = 1.9
@@ -247,6 +284,7 @@ material = ExtResource( 7 )
 
 [node name="FrontageDoorGlass" type="CSGBox" parent="Building1/FrontageDoor"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, -0.0500002 )
+use_in_baked_light = true
 width = 0.85
 height = 1.6
 depth = 0.04
@@ -254,6 +292,7 @@ material = ExtResource( 4 )
 
 [node name="SideFrontage" type="CSGBox" parent="Building1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -3.26, 7.91 )
+use_in_baked_light = true
 operation = 2
 width = 1.0
 height = 2.5
@@ -262,6 +301,7 @@ material = ExtResource( 2 )
 
 [node name="SideFrontageDoor" type="CSGBox" parent="Building1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -3.58, 7.84 )
+use_in_baked_light = true
 operation = 2
 width = 0.8
 height = 1.8
@@ -270,6 +310,7 @@ material = ExtResource( 9 )
 
 [node name="CSGBox3" type="CSGBox" parent="Building1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4, 7.7 )
+use_in_baked_light = true
 width = 8.3
 height = 0.75
 depth = 0.85
@@ -277,6 +318,7 @@ material = ExtResource( 28 )
 
 [node name="CSGBox5" type="CSGBox" parent="Building1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.25, 0 )
+use_in_baked_light = true
 width = 8.3
 height = 0.5
 depth = 16.3
@@ -284,6 +326,7 @@ material = ExtResource( 28 )
 
 [node name="Window" type="CSGBox" parent="Building1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.3, 7.945 )
+use_in_baked_light = true
 operation = 2
 width = 2.52
 height = 1.22
@@ -295,6 +338,7 @@ __meta__ = {
 
 [node name="WindowFrame" type="CSGBox" parent="Building1/Window"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.05 )
+use_in_baked_light = true
 operation = 2
 width = 2.5
 height = 1.2
@@ -303,6 +347,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox" type="CSGBox" parent="Building1/Window/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.938, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.525
 height = 1.1
@@ -311,6 +356,7 @@ material = ExtResource( 4 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building1/Window/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.313, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.525
 height = 1.1
@@ -319,6 +365,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame2" type="CSGBox" parent="Building1/Window"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.313, 0, -0.02 )
+use_in_baked_light = true
 operation = 2
 width = 0.625
 height = 1.2
@@ -327,6 +374,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox" type="CSGBox" parent="Building1/Window/WindowFrame2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.525
 height = 1.1
@@ -335,6 +383,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame3" type="CSGBox" parent="Building1/Window"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.938, 0, -0.02 )
+use_in_baked_light = true
 operation = 2
 width = 0.625
 height = 1.2
@@ -343,6 +392,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building1/Window/WindowFrame3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.525
 height = 1.1
@@ -351,11 +401,13 @@ material = ExtResource( 4 )
 
 [node name="WindowSill" type="MeshInstance" parent="Building1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.31, 7.91 )
+use_in_baked_light = true
 mesh = SubResource( 2 )
 material/0 = null
 
 [node name="Window2" type="CSGBox" parent="Building1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.3, 7.945 )
+use_in_baked_light = true
 operation = 2
 width = 2.52
 height = 1.22
@@ -367,6 +419,7 @@ __meta__ = {
 
 [node name="WindowFrame" type="CSGBox" parent="Building1/Window2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.05 )
+use_in_baked_light = true
 operation = 2
 width = 2.5
 height = 1.2
@@ -375,6 +428,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox" type="CSGBox" parent="Building1/Window2/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.938, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.525
 height = 1.1
@@ -383,6 +437,7 @@ material = ExtResource( 4 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building1/Window2/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.313, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.525
 height = 1.1
@@ -391,6 +446,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame2" type="CSGBox" parent="Building1/Window2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.313, 0, -0.02 )
+use_in_baked_light = true
 operation = 2
 width = 0.625
 height = 1.2
@@ -399,6 +455,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox" type="CSGBox" parent="Building1/Window2/WindowFrame2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.525
 height = 1.1
@@ -407,6 +464,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame3" type="CSGBox" parent="Building1/Window2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.938, 0, -0.02 )
+use_in_baked_light = true
 operation = 2
 width = 0.625
 height = 1.2
@@ -415,6 +473,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building1/Window2/WindowFrame3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.525
 height = 1.1
@@ -423,11 +482,13 @@ material = ExtResource( 4 )
 
 [node name="WindowSill2" type="MeshInstance" parent="Building1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -0.31, 7.91 )
+use_in_baked_light = true
 mesh = SubResource( 2 )
 material/0 = null
 
 [node name="Window3" type="CSGBox" parent="Building1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2.9, 7.945 )
+use_in_baked_light = true
 operation = 2
 width = 2.52
 height = 1.22
@@ -439,6 +500,7 @@ __meta__ = {
 
 [node name="WindowFrame" type="CSGBox" parent="Building1/Window3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.05 )
+use_in_baked_light = true
 operation = 2
 width = 2.5
 height = 1.2
@@ -447,6 +509,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox" type="CSGBox" parent="Building1/Window3/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.938, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.525
 height = 1.1
@@ -455,6 +518,7 @@ material = ExtResource( 4 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building1/Window3/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.313, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.525
 height = 1.1
@@ -463,6 +527,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame2" type="CSGBox" parent="Building1/Window3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.313, 0, -0.02 )
+use_in_baked_light = true
 operation = 2
 width = 0.625
 height = 1.2
@@ -471,6 +536,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox" type="CSGBox" parent="Building1/Window3/WindowFrame2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.525
 height = 1.1
@@ -479,6 +545,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame3" type="CSGBox" parent="Building1/Window3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.938, 0, -0.02 )
+use_in_baked_light = true
 operation = 2
 width = 0.625
 height = 1.2
@@ -487,6 +554,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building1/Window3/WindowFrame3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.525
 height = 1.1
@@ -495,11 +563,13 @@ material = ExtResource( 4 )
 
 [node name="WindowSill3" type="MeshInstance" parent="Building1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2.29, 7.91 )
+use_in_baked_light = true
 mesh = SubResource( 2 )
 material/0 = null
 
 [node name="Window4" type="CSGBox" parent="Building1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.9, 7.945 )
+use_in_baked_light = true
 operation = 2
 width = 2.52
 height = 1.22
@@ -511,6 +581,7 @@ __meta__ = {
 
 [node name="WindowFrame" type="CSGBox" parent="Building1/Window4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.05 )
+use_in_baked_light = true
 operation = 2
 width = 2.5
 height = 1.2
@@ -519,6 +590,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox" type="CSGBox" parent="Building1/Window4/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.938, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.525
 height = 1.1
@@ -527,6 +599,7 @@ material = ExtResource( 4 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building1/Window4/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.313, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.525
 height = 1.1
@@ -535,6 +608,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame2" type="CSGBox" parent="Building1/Window4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.313, 0, -0.02 )
+use_in_baked_light = true
 operation = 2
 width = 0.625
 height = 1.2
@@ -543,6 +617,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox" type="CSGBox" parent="Building1/Window4/WindowFrame2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.525
 height = 1.1
@@ -551,6 +626,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame3" type="CSGBox" parent="Building1/Window4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.938, 0, -0.02 )
+use_in_baked_light = true
 operation = 2
 width = 0.625
 height = 1.2
@@ -559,6 +635,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building1/Window4/WindowFrame3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.525
 height = 1.1
@@ -567,6 +644,7 @@ material = ExtResource( 4 )
 
 [node name="WindowSill4" type="MeshInstance" parent="Building1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.29, 7.91 )
+use_in_baked_light = true
 mesh = SubResource( 2 )
 material/0 = null
 
@@ -584,6 +662,7 @@ __meta__ = {
 
 [node name="CSGBox" type="CSGBox" parent="Building1/Logo/Ludum"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1, -1.175, 9 )
+use_in_baked_light = true
 width = 0.3
 height = 0.55
 depth = 0.1
@@ -591,6 +670,7 @@ material = ExtResource( 30 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building1/Logo/Ludum"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.775, -1.65, 9 )
+use_in_baked_light = true
 width = 0.25
 height = 0.3
 depth = 0.1
@@ -598,6 +678,7 @@ material = ExtResource( 30 )
 
 [node name="CSGCylinder" type="CSGCylinder" parent="Building1/Logo/Ludum"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.9, -1.45, 9 )
+use_in_baked_light = true
 radius = 0.35
 height = 0.1
 sides = 24
@@ -605,6 +686,7 @@ material = ExtResource( 30 )
 
 [node name="CSGBox5" type="CSGBox" parent="Building1/Logo/Ludum/CSGCylinder"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -0.175 )
+use_in_baked_light = true
 operation = 2
 width = 0.7
 height = 0.35
@@ -613,6 +695,7 @@ material = ExtResource( 30 )
 
 [node name="CSGBox6" type="CSGBox" parent="Building1/Logo/Ludum/CSGCylinder"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.175, 0, 0 )
+use_in_baked_light = true
 operation = 2
 width = 0.35
 height = 0.7
@@ -620,6 +703,7 @@ depth = 0.1
 material = ExtResource( 30 )
 
 [node name="CSGCylinder3" type="CSGCylinder" parent="Building1/Logo/Ludum/CSGCylinder"]
+use_in_baked_light = true
 operation = 2
 radius = 0.05
 height = 0.1
@@ -628,6 +712,7 @@ material = ExtResource( 30 )
 
 [node name="CSGBox3" type="CSGBox" parent="Building1/Logo/Ludum"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45, -1.275, 9 )
+use_in_baked_light = true
 width = 0.3
 height = 0.35
 depth = 0.1
@@ -635,6 +720,7 @@ material = ExtResource( 30 )
 
 [node name="CSGBox4" type="CSGBox" parent="Building1/Logo/Ludum"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.05, -1.275, 9 )
+use_in_baked_light = true
 width = 0.3
 height = 0.35
 depth = 0.1
@@ -642,12 +728,14 @@ material = ExtResource( 30 )
 
 [node name="CSGCylinder2" type="CSGCylinder" parent="Building1/Logo/Ludum"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.25, -1.45, 9 )
+use_in_baked_light = true
 radius = 0.35
 height = 0.1
 sides = 24
 material = ExtResource( 30 )
 
 [node name="CSGCylinder3" type="CSGCylinder" parent="Building1/Logo/Ludum/CSGCylinder2"]
+use_in_baked_light = true
 operation = 2
 radius = 0.05
 height = 0.1
@@ -656,6 +744,7 @@ material = ExtResource( 30 )
 
 [node name="CSGBox5" type="CSGBox" parent="Building1/Logo/Ludum/CSGCylinder2"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -0.175 )
+use_in_baked_light = true
 operation = 2
 width = 0.3
 height = 0.35
@@ -664,12 +753,14 @@ material = ExtResource( 30 )
 
 [node name="CSGCylinder3" type="CSGCylinder" parent="Building1/Logo/Ludum"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.5, -1.45, 9 )
+use_in_baked_light = true
 radius = 0.35
 height = 0.1
 sides = 24
 material = ExtResource( 30 )
 
 [node name="CSGCylinder4" type="CSGCylinder" parent="Building1/Logo/Ludum/CSGCylinder3"]
+use_in_baked_light = true
 operation = 2
 radius = 0.05
 height = 0.1
@@ -678,6 +769,7 @@ material = ExtResource( 30 )
 
 [node name="CSGBox5" type="CSGBox" parent="Building1/Logo/Ludum"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3, -1.2, 9 )
+use_in_baked_light = true
 width = 0.3
 height = 0.5
 depth = 0.1
@@ -685,6 +777,7 @@ material = ExtResource( 30 )
 
 [node name="CSGBox6" type="CSGBox" parent="Building1/Logo/Ludum"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95, -1.275, 9 )
+use_in_baked_light = true
 width = 0.3
 height = 0.35
 depth = 0.1
@@ -692,6 +785,7 @@ material = ExtResource( 30 )
 
 [node name="CSGBox7" type="CSGBox" parent="Building1/Logo/Ludum"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55, -1.275, 9 )
+use_in_baked_light = true
 width = 0.3
 height = 0.35
 depth = 0.1
@@ -699,12 +793,14 @@ material = ExtResource( 30 )
 
 [node name="CSGCylinder4" type="CSGCylinder" parent="Building1/Logo/Ludum"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.75, -1.45, 9 )
+use_in_baked_light = true
 radius = 0.35
 height = 0.1
 sides = 24
 material = ExtResource( 30 )
 
 [node name="CSGCylinder3" type="CSGCylinder" parent="Building1/Logo/Ludum/CSGCylinder4"]
+use_in_baked_light = true
 operation = 2
 radius = 0.05
 height = 0.1
@@ -713,6 +809,7 @@ material = ExtResource( 30 )
 
 [node name="CSGBox5" type="CSGBox" parent="Building1/Logo/Ludum/CSGCylinder4"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -0.175 )
+use_in_baked_light = true
 operation = 2
 width = 0.3
 height = 0.35
@@ -721,6 +818,7 @@ material = ExtResource( 30 )
 
 [node name="CSGBox8" type="CSGBox" parent="Building1/Logo/Ludum"]
 transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.200001, -1.625, 9 )
+use_in_baked_light = true
 width = 0.3
 height = 0.35
 depth = 0.1
@@ -728,6 +826,7 @@ material = ExtResource( 30 )
 
 [node name="CSGBox9" type="CSGBox" parent="Building1/Logo/Ludum"]
 transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.2, -1.625, 9 )
+use_in_baked_light = true
 width = 0.3
 height = 0.35
 depth = 0.1
@@ -735,12 +834,14 @@ material = ExtResource( 30 )
 
 [node name="CSGCylinder5" type="CSGCylinder" parent="Building1/Logo/Ludum"]
 transform = Transform( -1, -3.82137e-15, -8.74228e-08, -8.74228e-08, 4.37114e-08, 1, 0, 1, -4.37114e-08, -4.76837e-07, -1.45, 9 )
+use_in_baked_light = true
 radius = 0.35
 height = 0.1
 sides = 24
 material = ExtResource( 30 )
 
 [node name="CSGCylinder3" type="CSGCylinder" parent="Building1/Logo/Ludum/CSGCylinder5"]
+use_in_baked_light = true
 operation = 2
 radius = 0.05
 height = 0.1
@@ -749,6 +850,7 @@ material = ExtResource( 30 )
 
 [node name="CSGBox5" type="CSGBox" parent="Building1/Logo/Ludum/CSGCylinder5"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -0.175 )
+use_in_baked_light = true
 operation = 2
 width = 0.3
 height = 0.35
@@ -757,6 +859,7 @@ material = ExtResource( 30 )
 
 [node name="CSGBox10" type="CSGBox" parent="Building1/Logo/Ludum"]
 transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.6, -1.625, 9 )
+use_in_baked_light = true
 width = 0.3
 height = 0.35
 depth = 0.1
@@ -764,12 +867,14 @@ material = ExtResource( 30 )
 
 [node name="CSGCylinder6" type="CSGCylinder" parent="Building1/Logo/Ludum"]
 transform = Transform( -1, -3.82137e-15, -8.74228e-08, -8.74228e-08, 4.37114e-08, 1, 0, 1, -4.37114e-08, 0.4, -1.45, 9 )
+use_in_baked_light = true
 radius = 0.35
 height = 0.1
 sides = 24
 material = ExtResource( 30 )
 
 [node name="CSGCylinder3" type="CSGCylinder" parent="Building1/Logo/Ludum/CSGCylinder6"]
+use_in_baked_light = true
 operation = 2
 radius = 0.05
 height = 0.1
@@ -778,6 +883,7 @@ material = ExtResource( 30 )
 
 [node name="CSGBox5" type="CSGBox" parent="Building1/Logo/Ludum/CSGCylinder6"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -0.175 )
+use_in_baked_light = true
 operation = 2
 width = 0.3
 height = 0.35
@@ -792,6 +898,7 @@ __meta__ = {
 
 [node name="CSGBox11" type="CSGBox" parent="Building1/Logo/Dare"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.225, -1.35, 9 )
+use_in_baked_light = true
 width = 0.325
 height = 0.9
 depth = 0.1
@@ -799,6 +906,7 @@ material = ExtResource( 31 )
 
 [node name="CSGBox12" type="CSGBox" parent="Building1/Logo/Dare"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35, -1.05, 9 )
+use_in_baked_light = true
 width = 0.2
 height = 0.3
 depth = 0.1
@@ -806,6 +914,7 @@ material = ExtResource( 31 )
 
 [node name="CSGBox13" type="CSGBox" parent="Building1/Logo/Dare"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35, -1.65, 9 )
+use_in_baked_light = true
 width = 0.2
 height = 0.3
 depth = 0.1
@@ -813,6 +922,7 @@ material = ExtResource( 31 )
 
 [node name="CSGCylinder7" type="CSGCylinder" parent="Building1/Logo/Dare"]
 transform = Transform( -0.85, 1.50996e-07, 6.60024e-15, 0, -4.37114e-08, 1, 1.28346e-07, 1, 4.37114e-08, 1.45, -1.35, 9 )
+use_in_baked_light = true
 radius = 0.45
 height = 0.1
 sides = 24
@@ -820,6 +930,7 @@ material = ExtResource( 31 )
 
 [node name="CSGBox12" type="CSGBox" parent="Building1/Logo/Dare/CSGCylinder7"]
 transform = Transform( -1, -8.74228e-08, 0, 2.84217e-14, 4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0.532024, -1.19209e-07, 0 )
+use_in_baked_light = true
 operation = 2
 width = 0.5
 height = 0.9
@@ -828,6 +939,7 @@ material = ExtResource( 31 )
 
 [node name="CSGCylinder8" type="CSGCylinder" parent="Building1/Logo/Dare/CSGCylinder7"]
 transform = Transform( 1, 0, 0, 0, 1, -7.10543e-15, 0, 7.10543e-15, 1, 0.072, 0, 0 )
+use_in_baked_light = true
 operation = 2
 radius = 0.15
 height = 0.1
@@ -836,6 +948,7 @@ material = ExtResource( 31 )
 
 [node name="CSGCylinder8" type="CSGCylinder" parent="Building1/Logo/Dare"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2.25, -1.45, 9 )
+use_in_baked_light = true
 radius = 0.35
 height = 0.1
 sides = 24
@@ -843,12 +956,14 @@ material = ExtResource( 31 )
 
 [node name="CSGBox5" type="CSGBox" parent="Building1/Logo/Dare/CSGCylinder8"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.175, 0, 0.175 )
+use_in_baked_light = true
 width = 0.35
 height = 0.35
 depth = 0.1
 material = ExtResource( 31 )
 
 [node name="CSGCylinder3" type="CSGCylinder" parent="Building1/Logo/Dare/CSGCylinder8"]
+use_in_baked_light = true
 operation = 2
 radius = 0.05
 height = 0.1
@@ -857,6 +972,7 @@ material = ExtResource( 31 )
 
 [node name="CSGCylinder9" type="CSGCylinder" parent="Building1/Logo/Dare"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3, -1.45, 9 )
+use_in_baked_light = true
 radius = 0.35
 height = 0.1
 sides = 24
@@ -864,6 +980,7 @@ material = ExtResource( 31 )
 
 [node name="CSGBox5" type="CSGBox" parent="Building1/Logo/Dare/CSGCylinder9"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0.175 )
+use_in_baked_light = true
 operation = 2
 width = 0.7
 height = 0.35
@@ -872,6 +989,7 @@ material = ExtResource( 31 )
 
 [node name="CSGBox6" type="CSGBox" parent="Building1/Logo/Dare/CSGCylinder9"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.175, 0, 0 )
+use_in_baked_light = true
 operation = 2
 width = 0.35
 height = 0.7
@@ -879,6 +997,7 @@ depth = 0.1
 material = ExtResource( 31 )
 
 [node name="CSGCylinder3" type="CSGCylinder" parent="Building1/Logo/Dare/CSGCylinder9"]
+use_in_baked_light = true
 operation = 2
 radius = 0.05
 height = 0.1
@@ -887,12 +1006,14 @@ material = ExtResource( 31 )
 
 [node name="CSGCylinder10" type="CSGCylinder" parent="Building1/Logo/Dare"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.5, -1.45, 9 )
+use_in_baked_light = true
 radius = 0.35
 height = 0.1
 sides = 24
 material = ExtResource( 31 )
 
 [node name="CSGCylinder3" type="CSGCylinder" parent="Building1/Logo/Dare/CSGCylinder10"]
+use_in_baked_light = true
 operation = 2
 radius = 0.05
 height = 0.1
@@ -901,6 +1022,7 @@ material = ExtResource( 31 )
 
 [node name="CSGBox" type="CSGBox" parent="Building1/Logo/Dare/CSGCylinder10"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.04 )
+use_in_baked_light = true
 width = 0.3
 height = 0.1
 depth = 0.05
@@ -908,6 +1030,7 @@ material = ExtResource( 31 )
 
 [node name="CSGPolygon" type="CSGPolygon" parent="Building1/Logo/Dare/CSGCylinder10"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.25, 0.15, 0.3 )
+use_in_baked_light = true
 operation = 2
 polygon = PoolVector2Array( 0.2, 0, -0.2, 0.2, 0.2, 0.2 )
 depth = 0.3
@@ -915,6 +1038,7 @@ material = ExtResource( 31 )
 
 [node name="CSGBox14" type="CSGBox" parent="Building1/Logo/Dare"]
 transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 2.8, -1.625, 9 )
+use_in_baked_light = true
 width = 0.3
 height = 0.35
 depth = 0.1
@@ -922,6 +1046,7 @@ material = ExtResource( 31 )
 
 [node name="CSGBox15" type="CSGBox" parent="Building1/Logo/Dare"]
 transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 3.05, -1.25, 9 )
+use_in_baked_light = true
 width = 0.1
 height = 0.3
 depth = 0.1
@@ -929,6 +1054,7 @@ material = ExtResource( 31 )
 
 [node name="Building2" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.75, 4.8, -11 )
+use_in_baked_light = true
 width = 3.0
 height = 9.6
 depth = 16.0
@@ -939,6 +1065,7 @@ __meta__ = {
 
 [node name="Entrance" type="CSGBox" parent="Building2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.56, 8 )
+use_in_baked_light = true
 operation = 2
 height = 2.5
 depth = 0.2
@@ -946,6 +1073,7 @@ material = ExtResource( 24 )
 
 [node name="EntranceDoor" type="CSGBox" parent="Building2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, -3.83, 7.9 )
+use_in_baked_light = true
 operation = 2
 width = 0.9
 height = 1.9
@@ -954,6 +1082,7 @@ material = ExtResource( 25 )
 
 [node name="Window" type="CSGBox" parent="Building2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 7.945 )
+use_in_baked_light = true
 operation = 2
 width = 2.52
 height = 1.22
@@ -965,6 +1094,7 @@ __meta__ = {
 
 [node name="WindowFrame" type="CSGBox" parent="Building2/Window"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.05 )
+use_in_baked_light = true
 operation = 2
 width = 2.5
 height = 1.2
@@ -973,6 +1103,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox" type="CSGBox" parent="Building2/Window/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.938, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.525
 height = 1.1
@@ -981,6 +1112,7 @@ material = ExtResource( 4 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building2/Window/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.313, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.525
 height = 1.1
@@ -989,6 +1121,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame2" type="CSGBox" parent="Building2/Window"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.313, 0, -0.02 )
+use_in_baked_light = true
 operation = 2
 width = 0.625
 height = 1.2
@@ -997,6 +1130,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox" type="CSGBox" parent="Building2/Window/WindowFrame2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.525
 height = 1.1
@@ -1005,6 +1139,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame3" type="CSGBox" parent="Building2/Window"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.938, 0, -0.02 )
+use_in_baked_light = true
 operation = 2
 width = 0.625
 height = 1.2
@@ -1013,6 +1148,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building2/Window/WindowFrame3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.525
 height = 1.1
@@ -1021,11 +1157,13 @@ material = ExtResource( 4 )
 
 [node name="WindowSill" type="MeshInstance" parent="Building2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.41, 7.91 )
+use_in_baked_light = true
 mesh = SubResource( 2 )
 material/0 = null
 
 [node name="Window3" type="CSGBox" parent="Building2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9, 7.945 )
+use_in_baked_light = true
 operation = 2
 width = 2.52
 height = 1.22
@@ -1037,6 +1175,7 @@ __meta__ = {
 
 [node name="WindowFrame" type="CSGBox" parent="Building2/Window3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.05 )
+use_in_baked_light = true
 operation = 2
 width = 2.5
 height = 1.2
@@ -1045,6 +1184,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox" type="CSGBox" parent="Building2/Window3/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.938, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.525
 height = 1.1
@@ -1053,6 +1193,7 @@ material = ExtResource( 4 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building2/Window3/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.313, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.525
 height = 1.1
@@ -1061,6 +1202,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame2" type="CSGBox" parent="Building2/Window3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.313, 0, -0.02 )
+use_in_baked_light = true
 operation = 2
 width = 0.625
 height = 1.2
@@ -1069,6 +1211,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox" type="CSGBox" parent="Building2/Window3/WindowFrame2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.525
 height = 1.1
@@ -1077,6 +1220,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame3" type="CSGBox" parent="Building2/Window3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.938, 0, -0.02 )
+use_in_baked_light = true
 operation = 2
 width = 0.625
 height = 1.2
@@ -1085,6 +1229,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building2/Window3/WindowFrame3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.525
 height = 1.1
@@ -1093,16 +1238,13 @@ material = ExtResource( 4 )
 
 [node name="WindowSill3" type="MeshInstance" parent="Building2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.29, 7.91 )
+use_in_baked_light = true
 mesh = SubResource( 2 )
 material/0 = null
 
-[node name="OmniLight" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 3.5, 2 )
-visible = false
-omni_range = 20.0
-
 [node name="Building3" type="CSGBox" parent="."]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 4.5, 13 )
+use_in_baked_light = true
 width = 16.0
 height = 9.0
 depth = 5.0
@@ -1113,6 +1255,7 @@ __meta__ = {
 
 [node name="CSGBox" type="CSGBox" parent="Building3"]
 transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 8.45, 0, 2.95 )
+use_in_baked_light = true
 operation = 2
 width = 4.0
 height = 9.0
@@ -1121,6 +1264,7 @@ material = ExtResource( 10 )
 
 [node name="Window" type="CSGBox" parent="Building3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.61, 0, 2.49 )
+use_in_baked_light = true
 operation = 2
 width = 4.2
 height = 1.22
@@ -1134,6 +1278,7 @@ __meta__ = {
 
 [node name="WindowFrame" type="CSGBox" parent="Building3/Window/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0500002 )
+use_in_baked_light = true
 width = 4.14
 height = 1.2
 depth = 0.03
@@ -1141,6 +1286,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox" type="CSGBox" parent="Building3/Window/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1149,6 +1295,7 @@ material = ExtResource( 4 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building3/Window/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1157,6 +1304,7 @@ material = ExtResource( 4 )
 
 [node name="CSGBox3" type="CSGBox" parent="Building3/Window/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.03, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1165,6 +1313,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame2" type="CSGBox" parent="Building3/Window/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04, 0, -0.02 )
+use_in_baked_light = true
 width = 0.69
 height = 1.2
 depth = 0.04
@@ -1172,6 +1321,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox" type="CSGBox" parent="Building3/Window/Spatial/WindowFrame2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1180,6 +1330,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame3" type="CSGBox" parent="Building3/Window/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34, 0, -0.02 )
+use_in_baked_light = true
 width = 0.69
 height = 1.2
 depth = 0.04
@@ -1187,6 +1338,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building3/Window/Spatial/WindowFrame3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1195,6 +1347,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame4" type="CSGBox" parent="Building3/Window/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.72, 0, -0.02 )
+use_in_baked_light = true
 width = 0.69
 height = 1.2
 depth = 0.04
@@ -1202,6 +1355,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building3/Window/Spatial/WindowFrame4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1210,6 +1364,7 @@ material = ExtResource( 4 )
 
 [node name="Window2" type="CSGBox" parent="Building3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.61, 2.65, 2.49 )
+use_in_baked_light = true
 operation = 2
 width = 4.2
 height = 1.22
@@ -1223,6 +1378,7 @@ __meta__ = {
 
 [node name="WindowFrame" type="CSGBox" parent="Building3/Window2/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0500002 )
+use_in_baked_light = true
 width = 4.14
 height = 1.2
 depth = 0.03
@@ -1230,6 +1386,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox" type="CSGBox" parent="Building3/Window2/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1238,6 +1395,7 @@ material = ExtResource( 4 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building3/Window2/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1246,6 +1404,7 @@ material = ExtResource( 4 )
 
 [node name="CSGBox3" type="CSGBox" parent="Building3/Window2/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.03, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1254,6 +1413,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame2" type="CSGBox" parent="Building3/Window2/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04, 0, -0.02 )
+use_in_baked_light = true
 width = 0.69
 height = 1.2
 depth = 0.04
@@ -1261,6 +1421,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox" type="CSGBox" parent="Building3/Window2/Spatial/WindowFrame2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1269,6 +1430,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame3" type="CSGBox" parent="Building3/Window2/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34, 0, -0.02 )
+use_in_baked_light = true
 width = 0.69
 height = 1.2
 depth = 0.04
@@ -1276,6 +1438,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building3/Window2/Spatial/WindowFrame3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1284,6 +1447,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame4" type="CSGBox" parent="Building3/Window2/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.72, 0, -0.02 )
+use_in_baked_light = true
 width = 0.69
 height = 1.2
 depth = 0.04
@@ -1291,6 +1455,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building3/Window2/Spatial/WindowFrame4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1299,6 +1464,7 @@ material = ExtResource( 4 )
 
 [node name="Window3" type="CSGBox" parent="Building3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.96, 0, 2.49 )
+use_in_baked_light = true
 operation = 2
 width = 4.2
 height = 1.22
@@ -1312,6 +1478,7 @@ __meta__ = {
 
 [node name="WindowFrame" type="CSGBox" parent="Building3/Window3/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0500002 )
+use_in_baked_light = true
 width = 4.14
 height = 1.2
 depth = 0.03
@@ -1319,6 +1486,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox" type="CSGBox" parent="Building3/Window3/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1327,6 +1495,7 @@ material = ExtResource( 4 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building3/Window3/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1335,6 +1504,7 @@ material = ExtResource( 4 )
 
 [node name="CSGBox3" type="CSGBox" parent="Building3/Window3/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.03, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1343,6 +1513,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame2" type="CSGBox" parent="Building3/Window3/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04, 0, -0.02 )
+use_in_baked_light = true
 width = 0.69
 height = 1.2
 depth = 0.04
@@ -1350,6 +1521,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox" type="CSGBox" parent="Building3/Window3/Spatial/WindowFrame2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1358,6 +1530,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame3" type="CSGBox" parent="Building3/Window3/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34, 0, -0.02 )
+use_in_baked_light = true
 width = 0.69
 height = 1.2
 depth = 0.04
@@ -1365,6 +1538,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building3/Window3/Spatial/WindowFrame3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1373,6 +1547,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame4" type="CSGBox" parent="Building3/Window3/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.72, 0, -0.02 )
+use_in_baked_light = true
 width = 0.69
 height = 1.2
 depth = 0.04
@@ -1380,6 +1555,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building3/Window3/Spatial/WindowFrame4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1388,6 +1564,7 @@ material = ExtResource( 4 )
 
 [node name="Window4" type="CSGBox" parent="Building3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.96, 2.65, 2.49 )
+use_in_baked_light = true
 operation = 2
 width = 4.2
 height = 1.22
@@ -1401,6 +1578,7 @@ __meta__ = {
 
 [node name="WindowFrame" type="CSGBox" parent="Building3/Window4/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0500002 )
+use_in_baked_light = true
 width = 4.14
 height = 1.2
 depth = 0.03
@@ -1408,6 +1586,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox" type="CSGBox" parent="Building3/Window4/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1416,6 +1595,7 @@ material = ExtResource( 4 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building3/Window4/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1424,6 +1604,7 @@ material = ExtResource( 4 )
 
 [node name="CSGBox3" type="CSGBox" parent="Building3/Window4/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.03, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1432,6 +1613,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame2" type="CSGBox" parent="Building3/Window4/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04, 0, -0.02 )
+use_in_baked_light = true
 width = 0.69
 height = 1.2
 depth = 0.04
@@ -1439,6 +1621,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox" type="CSGBox" parent="Building3/Window4/Spatial/WindowFrame2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1447,6 +1630,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame3" type="CSGBox" parent="Building3/Window4/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34, 0, -0.02 )
+use_in_baked_light = true
 width = 0.69
 height = 1.2
 depth = 0.04
@@ -1454,6 +1638,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building3/Window4/Spatial/WindowFrame3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1462,6 +1647,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame4" type="CSGBox" parent="Building3/Window4/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.72, 0, -0.02 )
+use_in_baked_light = true
 width = 0.69
 height = 1.2
 depth = 0.04
@@ -1469,6 +1655,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building3/Window4/Spatial/WindowFrame4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1477,6 +1664,7 @@ material = ExtResource( 4 )
 
 [node name="Window5" type="CSGBox" parent="Building3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.54, 0, 2.49 )
+use_in_baked_light = true
 operation = 2
 width = 4.2
 height = 1.22
@@ -1490,6 +1678,7 @@ __meta__ = {
 
 [node name="WindowFrame" type="CSGBox" parent="Building3/Window5/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0500002 )
+use_in_baked_light = true
 width = 4.14
 height = 1.2
 depth = 0.03
@@ -1497,6 +1686,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox" type="CSGBox" parent="Building3/Window5/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1505,6 +1695,7 @@ material = ExtResource( 4 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building3/Window5/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1513,6 +1704,7 @@ material = ExtResource( 4 )
 
 [node name="CSGBox3" type="CSGBox" parent="Building3/Window5/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.03, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1521,6 +1713,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame2" type="CSGBox" parent="Building3/Window5/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04, 0, -0.02 )
+use_in_baked_light = true
 width = 0.69
 height = 1.2
 depth = 0.04
@@ -1528,6 +1721,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox" type="CSGBox" parent="Building3/Window5/Spatial/WindowFrame2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1536,6 +1730,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame3" type="CSGBox" parent="Building3/Window5/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34, 0, -0.02 )
+use_in_baked_light = true
 width = 0.69
 height = 1.2
 depth = 0.04
@@ -1543,6 +1738,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building3/Window5/Spatial/WindowFrame3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1551,6 +1747,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame4" type="CSGBox" parent="Building3/Window5/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.72, 0, -0.02 )
+use_in_baked_light = true
 width = 0.69
 height = 1.2
 depth = 0.04
@@ -1558,6 +1755,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building3/Window5/Spatial/WindowFrame4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1566,6 +1764,7 @@ material = ExtResource( 4 )
 
 [node name="Window6" type="CSGBox" parent="Building3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.54, 2.65, 2.49 )
+use_in_baked_light = true
 operation = 2
 width = 4.2
 height = 1.22
@@ -1579,6 +1778,7 @@ __meta__ = {
 
 [node name="WindowFrame" type="CSGBox" parent="Building3/Window6/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0500002 )
+use_in_baked_light = true
 width = 4.14
 height = 1.2
 depth = 0.03
@@ -1586,6 +1786,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox" type="CSGBox" parent="Building3/Window6/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1594,6 +1795,7 @@ material = ExtResource( 4 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building3/Window6/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1602,6 +1804,7 @@ material = ExtResource( 4 )
 
 [node name="CSGBox3" type="CSGBox" parent="Building3/Window6/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.03, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1610,6 +1813,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame2" type="CSGBox" parent="Building3/Window6/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04, 0, -0.02 )
+use_in_baked_light = true
 width = 0.69
 height = 1.2
 depth = 0.04
@@ -1617,6 +1821,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox" type="CSGBox" parent="Building3/Window6/Spatial/WindowFrame2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1625,6 +1830,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame3" type="CSGBox" parent="Building3/Window6/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34, 0, -0.02 )
+use_in_baked_light = true
 width = 0.69
 height = 1.2
 depth = 0.04
@@ -1632,6 +1838,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building3/Window6/Spatial/WindowFrame3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1640,6 +1847,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame4" type="CSGBox" parent="Building3/Window6/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.72, 0, -0.02 )
+use_in_baked_light = true
 width = 0.69
 height = 1.2
 depth = 0.04
@@ -1647,6 +1855,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building3/Window6/Spatial/WindowFrame4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.59
 height = 1.1
@@ -1655,6 +1864,7 @@ material = ExtResource( 4 )
 
 [node name="Window7" type="CSGBox" parent="Building3"]
 transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 7.05, 0, 1.55 )
+use_in_baked_light = true
 operation = 2
 width = 2.1
 height = 1.22
@@ -1668,6 +1878,7 @@ __meta__ = {
 
 [node name="WindowFrame" type="CSGBox" parent="Building3/Window7/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0500002 )
+use_in_baked_light = true
 width = 1.96
 height = 1.2
 depth = 0.03
@@ -1675,6 +1886,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building3/Window7/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.88
 height = 1.1
@@ -1683,6 +1895,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame3" type="CSGBox" parent="Building3/Window7/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49, 0, -0.02 )
+use_in_baked_light = true
 width = 0.98
 height = 1.2
 depth = 0.04
@@ -1690,6 +1903,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building3/Window7/Spatial/WindowFrame3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.88
 height = 1.1
@@ -1698,6 +1912,7 @@ material = ExtResource( 4 )
 
 [node name="Window8" type="CSGBox" parent="Building3"]
 transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 7.05, 2.65, 1.55 )
+use_in_baked_light = true
 operation = 2
 width = 2.1
 height = 1.22
@@ -1711,6 +1926,7 @@ __meta__ = {
 
 [node name="WindowFrame" type="CSGBox" parent="Building3/Window8/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0500002 )
+use_in_baked_light = true
 width = 1.96
 height = 1.2
 depth = 0.03
@@ -1718,6 +1934,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building3/Window8/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.88
 height = 1.1
@@ -1726,6 +1943,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame3" type="CSGBox" parent="Building3/Window8/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49, 0, -0.02 )
+use_in_baked_light = true
 width = 0.98
 height = 1.2
 depth = 0.04
@@ -1733,6 +1951,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building3/Window8/Spatial/WindowFrame3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.88
 height = 1.1
@@ -1741,6 +1960,7 @@ material = ExtResource( 4 )
 
 [node name="Window9" type="CSGBox" parent="Building3"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.99, 0, -0.96 )
+use_in_baked_light = true
 operation = 2
 width = 2.4
 height = 1.22
@@ -1754,6 +1974,7 @@ __meta__ = {
 
 [node name="WindowFrame" type="CSGBox" parent="Building3/Window9/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0500002 )
+use_in_baked_light = true
 width = 2.32
 height = 1.2
 depth = 0.03
@@ -1761,6 +1982,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building3/Window9/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.48
 height = 1.1
@@ -1769,6 +1991,7 @@ material = ExtResource( 4 )
 
 [node name="CSGBox3" type="CSGBox" parent="Building3/Window9/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.87, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.48
 height = 1.1
@@ -1777,6 +2000,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame2" type="CSGBox" parent="Building3/Window9/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.87, 0, -0.02 )
+use_in_baked_light = true
 width = 0.58
 height = 1.2
 depth = 0.04
@@ -1784,6 +2008,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox" type="CSGBox" parent="Building3/Window9/Spatial/WindowFrame2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.48
 height = 1.1
@@ -1792,6 +2017,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame3" type="CSGBox" parent="Building3/Window9/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29, 0, -0.02 )
+use_in_baked_light = true
 width = 0.58
 height = 1.2
 depth = 0.04
@@ -1799,6 +2025,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building3/Window9/Spatial/WindowFrame3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.48
 height = 1.1
@@ -1807,6 +2034,7 @@ material = ExtResource( 4 )
 
 [node name="Window10" type="CSGBox" parent="Building3"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.99, 2.65, -0.96 )
+use_in_baked_light = true
 operation = 2
 width = 2.4
 height = 1.22
@@ -1820,6 +2048,7 @@ __meta__ = {
 
 [node name="WindowFrame" type="CSGBox" parent="Building3/Window10/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0500002 )
+use_in_baked_light = true
 width = 2.32
 height = 1.2
 depth = 0.03
@@ -1827,6 +2056,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building3/Window10/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.48
 height = 1.1
@@ -1835,6 +2065,7 @@ material = ExtResource( 4 )
 
 [node name="CSGBox3" type="CSGBox" parent="Building3/Window10/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.87, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.48
 height = 1.1
@@ -1843,6 +2074,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame2" type="CSGBox" parent="Building3/Window10/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.87, 0, -0.02 )
+use_in_baked_light = true
 width = 0.58
 height = 1.2
 depth = 0.04
@@ -1850,6 +2082,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox" type="CSGBox" parent="Building3/Window10/Spatial/WindowFrame2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.48
 height = 1.1
@@ -1858,6 +2091,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame3" type="CSGBox" parent="Building3/Window10/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29, 0, -0.02 )
+use_in_baked_light = true
 width = 0.58
 height = 1.2
 depth = 0.04
@@ -1865,6 +2099,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building3/Window10/Spatial/WindowFrame3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.48
 height = 1.1
@@ -1873,6 +2108,7 @@ material = ExtResource( 4 )
 
 [node name="Door" type="CSGBox" parent="Building3"]
 transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 7.04, -3.5, 1.54 )
+use_in_baked_light = true
 operation = 2
 width = 1.9
 height = 2.2
@@ -1881,6 +2117,7 @@ material = ExtResource( 18 )
 
 [node name="Door2" type="CSGBox" parent="Building3/Door"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, -0.03, -0.04 )
+use_in_baked_light = true
 width = 0.9
 height = 1.9
 depth = 0.1
@@ -1888,6 +2125,7 @@ material = ExtResource( 18 )
 
 [node name="DoorGlassPane" type="CSGBox" parent="Building3/Door"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41, -0.01, -0.08 )
+use_in_baked_light = true
 width = 0.81
 height = 1.65
 depth = 0.05
@@ -1895,6 +2133,7 @@ material = ExtResource( 4 )
 
 [node name="DoorGlassPane2" type="CSGBox" parent="Building3/Door"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49, 0.045, -0.02 )
+use_in_baked_light = true
 width = 0.81
 height = 1.75
 depth = 0.05
@@ -1902,11 +2141,13 @@ material = ExtResource( 4 )
 
 [node name="DoorDoodad" type="MeshInstance" parent="Building3"]
 transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 7.34, -2.51, 1.2 )
+use_in_baked_light = true
 mesh = SubResource( 3 )
 material/0 = null
 
 [node name="Window11Outer" type="CSGBox" parent="Building3"]
 transform = Transform( 1, 0, 1.58932e-08, 0, 1, 0, -1.58932e-08, 0, 1, 4.55, -3.15, 2.5 )
+use_in_baked_light = true
 width = 1.76
 height = 0.96
 depth = 0.02
@@ -1917,6 +2158,7 @@ __meta__ = {
 
 [node name="Window11" type="CSGBox" parent="Building3"]
 transform = Transform( 1, 0, 1.58932e-08, 0, 1, 0, -1.58932e-08, 0, 1, 4.55, -3.15, 2.5 )
+use_in_baked_light = true
 operation = 2
 width = 1.71
 height = 0.91
@@ -1930,6 +2172,7 @@ __meta__ = {
 
 [node name="WindowFrame" type="CSGBox" parent="Building3/Window11/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0500002 )
+use_in_baked_light = true
 width = 1.7
 height = 0.902
 depth = 0.03
@@ -1937,6 +2180,7 @@ material = ExtResource( 18 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building3/Window11/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.425, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.75
 height = 0.8
@@ -1945,6 +2189,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame3" type="CSGBox" parent="Building3/Window11/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.425, 0, -0.02 )
+use_in_baked_light = true
 width = 0.85
 height = 0.9
 depth = 0.04
@@ -1952,14 +2197,138 @@ material = ExtResource( 18 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building3/Window11/Spatial/WindowFrame3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.75
 height = 0.8
 depth = 0.03
 material = ExtResource( 4 )
 
+[node name="SideFrontage" type="CSGBox" parent="Building3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, -3.61, 2.51 )
+use_in_baked_light = true
+operation = 2
+width = 0.8
+height = 1.8
+depth = 0.2
+material = ExtResource( 10 )
+
+[node name="SideFrontageDoor" type="CSGBox" parent="Building3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, -3.63, 2.39 )
+use_in_baked_light = true
+operation = 2
+width = 0.7
+height = 1.7
+depth = 0.1
+material = ExtResource( 9 )
+
+[node name="HvacVentFrame" type="MeshInstance" parent="Building3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05, -2.86, 2.5 )
+use_in_baked_light = true
+mesh = SubResource( 15 )
+material/0 = null
+
+[node name="HvacShaft1" type="MeshInstance" parent="Building3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05, -2.86, 2.687 )
+use_in_baked_light = true
+mesh = SubResource( 16 )
+material/0 = null
+
+[node name="HvacShaft2" type="MeshInstance" parent="Building3"]
+transform = Transform( 1, 3.09086e-08, 1.28028e-08, -3.09086e-08, 0.707107, 0.707107, 1.28028e-08, -0.707107, 0.707107, -1.05, -2.76, 2.9 )
+use_in_baked_light = true
+mesh = SubResource( 17 )
+material/0 = null
+
+[node name="HvacShaft3" type="MeshInstance" parent="Building3"]
+transform = Transform( 1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, 1, 4.37114e-08, -1, -4.37114e-08, -1.05, -2.547, 3 )
+use_in_baked_light = true
+mesh = SubResource( 16 )
+material/0 = null
+
+[node name="HvacShaft4" type="MeshInstance" parent="Building3"]
+transform = Transform( 1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, 1, 4.37114e-08, -1, -4.37114e-08, -1.05, -1.4, 3 )
+use_in_baked_light = true
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="HvacShaft5" type="MeshInstance" parent="Building3"]
+transform = Transform( 1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, 1, 4.37114e-08, -1, -4.37114e-08, -1.05, 0.6, 3 )
+use_in_baked_light = true
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="HvacShaft6" type="MeshInstance" parent="Building3"]
+transform = Transform( 1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, 1, 4.37114e-08, -1, -4.37114e-08, -1.05, 2.6, 3 )
+use_in_baked_light = true
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="HvacShaft7" type="MeshInstance" parent="Building3"]
+transform = Transform( 1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, 1, 4.37114e-08, -1, -4.37114e-08, -1.05, 3.8, 3 )
+use_in_baked_light = true
+mesh = SubResource( 16 )
+material/0 = null
+
+[node name="HvacShaft8" type="MeshInstance" parent="Building3"]
+transform = Transform( 1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, 1, 4.37114e-08, -1, -4.37114e-08, -1.05, 4.2, 3 )
+use_in_baked_light = true
+mesh = SubResource( 16 )
+material/0 = null
+
+[node name="HvacShaft9" type="MeshInstance" parent="Building3"]
+transform = Transform( 1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, 1, 4.37114e-08, -1, -4.37114e-08, -1.05, 4.4, 3 )
+use_in_baked_light = true
+mesh = SubResource( 16 )
+material/0 = null
+
+[node name="HvacShaft10" type="MeshInstance" parent="Building3"]
+transform = Transform( 1, 0, 0, -1.64203e-15, 1, 0, 0, 0, 1, -1.05, 4.713, 2.687 )
+use_in_baked_light = true
+mesh = SubResource( 16 )
+material/0 = null
+
+[node name="HvacShaft11" type="MeshInstance" parent="Building3"]
+transform = Transform( 1, -3.09086e-08, 1.28028e-08, 3.09086e-08, 0.707107, -0.707107, 1.28028e-08, 0.707107, 0.707107, -1.05, 4.613, 2.9 )
+use_in_baked_light = true
+mesh = SubResource( 17 )
+material/0 = null
+
+[node name="HvacShaft12" type="MeshInstance" parent="Building3"]
+transform = Transform( 1, 0, 0, -1.64203e-15, 1, 0, 0, 0, 1, -1.05, 4.713, 2.4 )
+use_in_baked_light = true
+mesh = SubResource( 16 )
+material/0 = null
+
+[node name="HvacShaft13" type="MeshInstance" parent="Building3"]
+transform = Transform( 1, 0, 0, -1.64203e-15, 1, 0, 0, 0, 1, -1.05, 4.713, 2 )
+use_in_baked_light = true
+mesh = SubResource( 16 )
+material/0 = null
+
+[node name="HvacShaft14" type="MeshInstance" parent="Building3"]
+transform = Transform( 1, 0, 0, -1.64203e-15, 1, 0, 0, 0, 1, -1.05, 4.713, 1.6 )
+use_in_baked_light = true
+mesh = SubResource( 16 )
+material/0 = null
+
+[node name="HvacShaft15" type="MeshInstance" parent="Building3"]
+transform = Transform( 1, 0, 0, -1.64203e-15, 1, 0, 0, 0, 1, -1.05, 4.713, 1.2 )
+use_in_baked_light = true
+mesh = SubResource( 16 )
+material/0 = null
+
+[node name="HvacMachine" type="MeshInstance" parent="Building3"]
+transform = Transform( 1, 0, 0, -1.64203e-15, 1, 0, 0, 0, 1, -0.9, 5, 0.7 )
+use_in_baked_light = true
+mesh = SubResource( 19 )
+material/0 = null
+
+[node name="SmallLamp" parent="Building3" instance=ExtResource( 39 )]
+
 [node name="Building3Pillars" type="CSGBox" parent="."]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 4.5, 13 )
+use_in_baked_light = true
 width = 16.06
 height = 9.0
 depth = 5.06
@@ -1970,6 +2339,7 @@ __meta__ = {
 
 [node name="CSGBox" type="CSGBox" parent="Building3Pillars"]
 transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 8.47, 0, 2.97 )
+use_in_baked_light = true
 operation = 2
 width = 4.0
 height = 9.0
@@ -1978,6 +2348,7 @@ material = ExtResource( 10 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building3Pillars"]
 transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 7.04, -3.4, 1.54 )
+use_in_baked_light = true
 operation = 2
 height = 2.2
 depth = 5.0
@@ -1985,6 +2356,7 @@ material = ExtResource( 10 )
 
 [node name="CSGBox3" type="CSGBox" parent="Building3Pillars"]
 transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 7.04, 0.75, 1.54 )
+use_in_baked_light = true
 operation = 2
 height = 5.0
 depth = 5.0
@@ -1992,6 +2364,7 @@ material = ExtResource( 10 )
 
 [node name="CSGBox4" type="CSGBox" parent="Building3Pillars"]
 transform = Transform( -1.58932e-08, 0, 1, 0, 1, 0, -1, 0, -1.58932e-08, 8, -3.4, -0.96 )
+use_in_baked_light = true
 operation = 2
 width = 2.35
 height = 2.2
@@ -2000,6 +2373,7 @@ material = ExtResource( 10 )
 
 [node name="CSGBox5" type="CSGBox" parent="Building3Pillars"]
 transform = Transform( -1.58932e-08, 0, 1, 0, 1, 0, -1, 0, -1.58932e-08, 8, 0.75, -0.96 )
+use_in_baked_light = true
 operation = 2
 width = 2.35
 height = 5.0
@@ -2008,6 +2382,7 @@ material = ExtResource( 10 )
 
 [node name="CSGBox6" type="CSGBox" parent="Building3Pillars"]
 transform = Transform( 1, 0, -2.78182e-08, 0, 1, 0, 2.78182e-08, 0, 1, 3.61, -3.4, 2.5 )
+use_in_baked_light = true
 operation = 2
 width = 4.175
 height = 2.2
@@ -2016,6 +2391,7 @@ material = ExtResource( 10 )
 
 [node name="CSGBox7" type="CSGBox" parent="Building3Pillars"]
 transform = Transform( 1, 0, -2.78182e-08, 0, 1, 0, 2.78182e-08, 0, 1, 3.61, 0.75, 2.5 )
+use_in_baked_light = true
 operation = 2
 width = 4.175
 height = 5.0
@@ -2024,6 +2400,7 @@ material = ExtResource( 10 )
 
 [node name="CSGBox8" type="CSGBox" parent="Building3Pillars"]
 transform = Transform( 1, 0, -2.78182e-08, 0, 1, 0, 2.78182e-08, 0, 1, -0.965, -3.4, 2.5 )
+use_in_baked_light = true
 operation = 2
 width = 4.175
 height = 2.2
@@ -2032,6 +2409,7 @@ material = ExtResource( 10 )
 
 [node name="CSGBox9" type="CSGBox" parent="Building3Pillars"]
 transform = Transform( 1, 0, -2.78182e-08, 0, 1, 0, 2.78182e-08, 0, 1, -0.965, 0.75, 2.5 )
+use_in_baked_light = true
 operation = 2
 width = 4.175
 height = 5.0
@@ -2040,6 +2418,7 @@ material = ExtResource( 10 )
 
 [node name="CSGBox10" type="CSGBox" parent="Building3Pillars"]
 transform = Transform( 1, 0, -2.78182e-08, 0, 1, 0, 2.78182e-08, 0, 1, -5.54, -3.4, 2.5 )
+use_in_baked_light = true
 operation = 2
 width = 4.175
 height = 2.2
@@ -2048,6 +2427,7 @@ material = ExtResource( 10 )
 
 [node name="CSGBox11" type="CSGBox" parent="Building3Pillars"]
 transform = Transform( 1, 0, -2.78182e-08, 0, 1, 0, 2.78182e-08, 0, 1, -5.54, 0.75, 2.5 )
+use_in_baked_light = true
 operation = 2
 width = 4.175
 height = 5.0
@@ -2056,6 +2436,7 @@ material = ExtResource( 10 )
 
 [node name="Building4" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.45, 3, -2.5 )
+use_in_baked_light = true
 width = 8.0
 height = 6.0
 depth = 16.0
@@ -2066,6 +2447,7 @@ __meta__ = {
 
 [node name="CSGBox" type="CSGBox" parent="Building4"]
 transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -4, 0, 8 )
+use_in_baked_light = true
 operation = 2
 width = 3.0
 height = 6.0
@@ -2074,6 +2456,7 @@ material = ExtResource( 26 )
 
 [node name="Frontage" type="CSGBox" parent="Building4"]
 transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -3.12, -2, 7.12 )
+use_in_baked_light = true
 operation = 2
 width = 1.1
 depth = 0.3
@@ -2081,112 +2464,134 @@ material = ExtResource( 26 )
 
 [node name="Shutter" type="CSGBox" parent="Building4/Frontage"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.15 )
+use_in_baked_light = true
 width = 1.1
 depth = 0.04
 material = ExtResource( 27 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Building4/Frontage/Shutter"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.95, -0.00999832 )
+use_in_baked_light = true
 mesh = SubResource( 4 )
 material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="Building4/Frontage/Shutter"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.85, -0.00999832 )
+use_in_baked_light = true
 mesh = SubResource( 4 )
 material/0 = null
 
 [node name="MeshInstance3" type="MeshInstance" parent="Building4/Frontage/Shutter"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, -0.00999832 )
+use_in_baked_light = true
 mesh = SubResource( 4 )
 material/0 = null
 
 [node name="MeshInstance4" type="MeshInstance" parent="Building4/Frontage/Shutter"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.65, -0.00999832 )
+use_in_baked_light = true
 mesh = SubResource( 4 )
 material/0 = null
 
 [node name="MeshInstance5" type="MeshInstance" parent="Building4/Frontage/Shutter"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.55, -0.00999832 )
+use_in_baked_light = true
 mesh = SubResource( 4 )
 material/0 = null
 
 [node name="MeshInstance6" type="MeshInstance" parent="Building4/Frontage/Shutter"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.45, -0.00999832 )
+use_in_baked_light = true
 mesh = SubResource( 4 )
 material/0 = null
 
 [node name="MeshInstance7" type="MeshInstance" parent="Building4/Frontage/Shutter"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35, -0.00999832 )
+use_in_baked_light = true
 mesh = SubResource( 4 )
 material/0 = null
 
 [node name="MeshInstance8" type="MeshInstance" parent="Building4/Frontage/Shutter"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, -0.00999832 )
+use_in_baked_light = true
 mesh = SubResource( 4 )
 material/0 = null
 
 [node name="MeshInstance9" type="MeshInstance" parent="Building4/Frontage/Shutter"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, -0.00999832 )
+use_in_baked_light = true
 mesh = SubResource( 4 )
 material/0 = null
 
 [node name="MeshInstance10" type="MeshInstance" parent="Building4/Frontage/Shutter"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0500001, -0.00999832 )
+use_in_baked_light = true
 mesh = SubResource( 4 )
 material/0 = null
 
 [node name="MeshInstance11" type="MeshInstance" parent="Building4/Frontage/Shutter"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, -0.00999832 )
+use_in_baked_light = true
 mesh = SubResource( 4 )
 material/0 = null
 
 [node name="MeshInstance12" type="MeshInstance" parent="Building4/Frontage/Shutter"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, -0.00999832 )
+use_in_baked_light = true
 mesh = SubResource( 4 )
 material/0 = null
 
 [node name="MeshInstance13" type="MeshInstance" parent="Building4/Frontage/Shutter"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, -0.00999832 )
+use_in_baked_light = true
 mesh = SubResource( 4 )
 material/0 = null
 
 [node name="MeshInstance14" type="MeshInstance" parent="Building4/Frontage/Shutter"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, -0.00999832 )
+use_in_baked_light = true
 mesh = SubResource( 4 )
 material/0 = null
 
 [node name="MeshInstance15" type="MeshInstance" parent="Building4/Frontage/Shutter"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, -0.00999832 )
+use_in_baked_light = true
 mesh = SubResource( 4 )
 material/0 = null
 
 [node name="MeshInstance16" type="MeshInstance" parent="Building4/Frontage/Shutter"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, -0.00999832 )
+use_in_baked_light = true
 mesh = SubResource( 4 )
 material/0 = null
 
 [node name="MeshInstance17" type="MeshInstance" parent="Building4/Frontage/Shutter"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, -0.00999832 )
+use_in_baked_light = true
 mesh = SubResource( 4 )
 material/0 = null
 
 [node name="MeshInstance18" type="MeshInstance" parent="Building4/Frontage/Shutter"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, -0.00999832 )
+use_in_baked_light = true
 mesh = SubResource( 4 )
 material/0 = null
 
 [node name="MeshInstance19" type="MeshInstance" parent="Building4/Frontage/Shutter"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, -0.00999832 )
+use_in_baked_light = true
 mesh = SubResource( 4 )
 material/0 = null
 
 [node name="MeshInstance20" type="MeshInstance" parent="Building4/Frontage/Shutter"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.53674e-07, 0.95, -0.00999928 )
+use_in_baked_light = true
 mesh = SubResource( 4 )
 material/0 = null
 
 [node name="Window1" type="CSGBox" parent="Building4"]
 transform = Transform( 1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, -0.75, -1.5, 7.98 )
+use_in_baked_light = true
 operation = 2
 width = 1.98
 height = 1.22
@@ -2200,6 +2605,7 @@ __meta__ = {
 
 [node name="WindowFrame" type="CSGBox" parent="Building4/Window1/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0500002 )
+use_in_baked_light = true
 width = 1.96
 height = 1.2
 depth = 0.03
@@ -2207,6 +2613,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building4/Window1/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.88
 height = 1.1
@@ -2215,6 +2622,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame3" type="CSGBox" parent="Building4/Window1/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49, 0, -0.02 )
+use_in_baked_light = true
 width = 0.98
 height = 1.2
 depth = 0.04
@@ -2222,6 +2630,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building4/Window1/Spatial/WindowFrame3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.88
 height = 1.1
@@ -2230,6 +2639,7 @@ material = ExtResource( 4 )
 
 [node name="Window2" type="CSGBox" parent="Building4"]
 transform = Transform( 1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, 2.25, -1.5, 7.98 )
+use_in_baked_light = true
 operation = 2
 width = 1.98
 height = 1.22
@@ -2243,6 +2653,7 @@ __meta__ = {
 
 [node name="WindowFrame" type="CSGBox" parent="Building4/Window2/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0500002 )
+use_in_baked_light = true
 width = 1.96
 height = 1.2
 depth = 0.03
@@ -2250,6 +2661,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building4/Window2/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.88
 height = 1.1
@@ -2258,6 +2670,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame3" type="CSGBox" parent="Building4/Window2/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49, 0, -0.02 )
+use_in_baked_light = true
 width = 0.98
 height = 1.2
 depth = 0.04
@@ -2265,6 +2678,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building4/Window2/Spatial/WindowFrame3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.88
 height = 1.1
@@ -2273,6 +2687,7 @@ material = ExtResource( 4 )
 
 [node name="Window3" type="CSGBox" parent="Building4"]
 transform = Transform( 1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, -0.75, 1.5, 7.98 )
+use_in_baked_light = true
 operation = 2
 width = 1.98
 height = 1.22
@@ -2286,6 +2701,7 @@ __meta__ = {
 
 [node name="WindowFrame" type="CSGBox" parent="Building4/Window3/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0500002 )
+use_in_baked_light = true
 width = 1.96
 height = 1.2
 depth = 0.03
@@ -2293,6 +2709,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building4/Window3/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.88
 height = 1.1
@@ -2301,6 +2718,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame3" type="CSGBox" parent="Building4/Window3/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49, 0, -0.02 )
+use_in_baked_light = true
 width = 0.98
 height = 1.2
 depth = 0.04
@@ -2308,6 +2726,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building4/Window3/Spatial/WindowFrame3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.88
 height = 1.1
@@ -2316,6 +2735,7 @@ material = ExtResource( 4 )
 
 [node name="Window4" type="CSGBox" parent="Building4"]
 transform = Transform( 1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, 2.25, 1.5, 7.98 )
+use_in_baked_light = true
 operation = 2
 width = 1.98
 height = 1.22
@@ -2329,6 +2749,7 @@ __meta__ = {
 
 [node name="WindowFrame" type="CSGBox" parent="Building4/Window4/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0500002 )
+use_in_baked_light = true
 width = 1.96
 height = 1.2
 depth = 0.03
@@ -2336,6 +2757,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building4/Window4/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.88
 height = 1.1
@@ -2344,6 +2766,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame3" type="CSGBox" parent="Building4/Window4/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49, 0, -0.02 )
+use_in_baked_light = true
 width = 0.98
 height = 1.2
 depth = 0.04
@@ -2351,6 +2774,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building4/Window4/Spatial/WindowFrame3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.88
 height = 1.1
@@ -2359,6 +2783,7 @@ material = ExtResource( 4 )
 
 [node name="Window5" type="CSGBox" parent="Building4"]
 transform = Transform( 1.58932e-08, 0, -1, 0, 1, 0, 1, 0, 1.58932e-08, -3.98, -1.5, 1 )
+use_in_baked_light = true
 operation = 2
 width = 1.98
 height = 1.22
@@ -2372,6 +2797,7 @@ __meta__ = {
 
 [node name="WindowFrame" type="CSGBox" parent="Building4/Window5/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0500002 )
+use_in_baked_light = true
 width = 1.96
 height = 1.2
 depth = 0.03
@@ -2379,6 +2805,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building4/Window5/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.88
 height = 1.1
@@ -2387,6 +2814,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame3" type="CSGBox" parent="Building4/Window5/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49, 0, -0.02 )
+use_in_baked_light = true
 width = 0.98
 height = 1.2
 depth = 0.04
@@ -2394,6 +2822,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building4/Window5/Spatial/WindowFrame3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.88
 height = 1.1
@@ -2402,6 +2831,7 @@ material = ExtResource( 4 )
 
 [node name="Window6" type="CSGBox" parent="Building4"]
 transform = Transform( 1.58932e-08, 0, -1, 0, 1, 0, 1, 0, 1.58932e-08, -3.98, -1.5, 4.75 )
+use_in_baked_light = true
 operation = 2
 width = 1.98
 height = 1.22
@@ -2415,6 +2845,7 @@ __meta__ = {
 
 [node name="WindowFrame" type="CSGBox" parent="Building4/Window6/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0500002 )
+use_in_baked_light = true
 width = 1.96
 height = 1.2
 depth = 0.03
@@ -2422,6 +2853,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building4/Window6/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.88
 height = 1.1
@@ -2430,6 +2862,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame3" type="CSGBox" parent="Building4/Window6/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49, 0, -0.02 )
+use_in_baked_light = true
 width = 0.98
 height = 1.2
 depth = 0.04
@@ -2437,6 +2870,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building4/Window6/Spatial/WindowFrame3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.88
 height = 1.1
@@ -2445,6 +2879,7 @@ material = ExtResource( 4 )
 
 [node name="Window7" type="CSGBox" parent="Building4"]
 transform = Transform( 1.58932e-08, 0, -1, 0, 1, 0, 1, 0, 1.58932e-08, -3.98, 1.5, 1 )
+use_in_baked_light = true
 operation = 2
 width = 1.98
 height = 1.22
@@ -2458,6 +2893,7 @@ __meta__ = {
 
 [node name="WindowFrame" type="CSGBox" parent="Building4/Window7/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0500002 )
+use_in_baked_light = true
 width = 1.96
 height = 1.2
 depth = 0.03
@@ -2465,6 +2901,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building4/Window7/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.88
 height = 1.1
@@ -2473,6 +2910,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame3" type="CSGBox" parent="Building4/Window7/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49, 0, -0.02 )
+use_in_baked_light = true
 width = 0.98
 height = 1.2
 depth = 0.04
@@ -2480,6 +2918,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building4/Window7/Spatial/WindowFrame3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.88
 height = 1.1
@@ -2488,6 +2927,7 @@ material = ExtResource( 4 )
 
 [node name="Window8" type="CSGBox" parent="Building4"]
 transform = Transform( 1.58932e-08, 0, -1, 0, 1, 0, 1, 0, 1.58932e-08, -3.98, 1.5, 4.75 )
+use_in_baked_light = true
 operation = 2
 width = 1.98
 height = 1.22
@@ -2501,6 +2941,7 @@ __meta__ = {
 
 [node name="WindowFrame" type="CSGBox" parent="Building4/Window8/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0500002 )
+use_in_baked_light = true
 width = 1.96
 height = 1.2
 depth = 0.03
@@ -2508,6 +2949,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building4/Window8/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.88
 height = 1.1
@@ -2516,6 +2958,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame3" type="CSGBox" parent="Building4/Window8/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49, 0, -0.02 )
+use_in_baked_light = true
 width = 0.98
 height = 1.2
 depth = 0.04
@@ -2523,6 +2966,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building4/Window8/Spatial/WindowFrame3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.88
 height = 1.1
@@ -2531,6 +2975,7 @@ material = ExtResource( 4 )
 
 [node name="Window9" type="CSGBox" parent="Building4"]
 transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -3.1, 1.5, 7.1 )
+use_in_baked_light = true
 operation = 2
 width = 1.72
 height = 1.22
@@ -2544,6 +2989,7 @@ __meta__ = {
 
 [node name="WindowFrame" type="CSGBox" parent="Building4/Window9/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0500002 )
+use_in_baked_light = true
 width = 1.7
 height = 1.2
 depth = 0.03
@@ -2551,6 +2997,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building4/Window9/Spatial/WindowFrame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.425, 0, 0.01 )
+use_in_baked_light = true
 operation = 2
 width = 0.75
 height = 1.1
@@ -2559,6 +3006,7 @@ material = ExtResource( 4 )
 
 [node name="WindowFrame3" type="CSGBox" parent="Building4/Window9/Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.425, 0, -0.02 )
+use_in_baked_light = true
 width = 0.85
 height = 1.2
 depth = 0.04
@@ -2566,6 +3014,7 @@ material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Building4/Window9/Spatial/WindowFrame3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015 )
+use_in_baked_light = true
 operation = 2
 width = 0.75
 height = 1.1
@@ -2574,14 +3023,27 @@ material = ExtResource( 4 )
 
 [node name="Door" type="CSGBox" parent="Building4"]
 transform = Transform( -2.98023e-08, 0, -1, 0, 1, 0, 1, 0, -2.98023e-08, -4, -2.03, 2.55 )
+use_in_baked_light = true
 operation = 2
 width = 0.9
 height = 1.9
 depth = 0.1
 material = ExtResource( 3 )
 
+[node name="Doorsign" type="MeshInstance" parent="Building4"]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -2.52, -1.5, 7.72 )
+use_in_baked_light = true
+mesh = SubResource( 27 )
+material/0 = null
+
+[node name="DoorsignPlate" type="MeshInstance" parent="Building4/Doorsign"]
+use_in_baked_light = true
+mesh = SubResource( 28 )
+material/0 = null
+
 [node name="VendingMachine" type="CSGBox" parent="."]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.95, 0.87, 10.8 )
+use_in_baked_light = true
 width = 1.0
 height = 1.7
 depth = 0.75
@@ -2592,6 +3054,7 @@ __meta__ = {
 
 [node name="CSGBox" type="CSGBox" parent="VendingMachine"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0.28, 0.375 )
+use_in_baked_light = true
 operation = 2
 width = 0.75
 height = 0.95
@@ -2600,6 +3063,7 @@ material = ExtResource( 20 )
 
 [node name="CSGBox2" type="CSGBox" parent="VendingMachine"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.275, -0.34, 0.375 )
+use_in_baked_light = true
 operation = 2
 width = 0.3
 height = 0.2
@@ -2608,6 +3072,7 @@ material = ExtResource( 21 )
 
 [node name="CSGBox3" type="CSGBox" parent="VendingMachine"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, -0.55, 0.375 )
+use_in_baked_light = true
 operation = 2
 width = 0.5
 height = 0.12
@@ -2616,6 +3081,7 @@ material = ExtResource( 22 )
 
 [node name="CSGBox4" type="CSGBox" parent="VendingMachine"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, -0.5, 0.375 )
+use_in_baked_light = true
 operation = 2
 width = 0.1
 height = 0.1
@@ -2624,6 +3090,7 @@ material = ExtResource( 23 )
 
 [node name="MeshInstance" type="MeshInstance" parent="VendingMachine"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.1, 0.375 )
+use_in_baked_light = true
 mesh = SubResource( 5 )
 material/0 = null
 
@@ -2638,71 +3105,85 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.375, 0.8, 2.38419e-07 )
 
 [node name="MeshInstance3" type="MeshInstance" parent="MaintenanceStairs/Section"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0.6 )
+use_in_baked_light = true
 mesh = ExtResource( 11 )
 material/0 = null
 
 [node name="MeshInstance4" type="MeshInstance" parent="MaintenanceStairs/Section"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0.4 )
+use_in_baked_light = true
 mesh = ExtResource( 11 )
 material/0 = null
 
 [node name="MeshInstance5" type="MeshInstance" parent="MaintenanceStairs/Section"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0.2 )
+use_in_baked_light = true
 mesh = ExtResource( 11 )
 material/0 = null
 
 [node name="MeshInstance6" type="MeshInstance" parent="MaintenanceStairs/Section"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.38419e-07, -2.38419e-07 )
+use_in_baked_light = true
 mesh = ExtResource( 11 )
 material/0 = null
 
 [node name="MeshInstance7" type="MeshInstance" parent="MaintenanceStairs/Section"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, -0.2 )
+use_in_baked_light = true
 mesh = ExtResource( 11 )
 material/0 = null
 
 [node name="MeshInstance8" type="MeshInstance" parent="MaintenanceStairs/Section"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, -0.4 )
+use_in_baked_light = true
 mesh = ExtResource( 11 )
 material/0 = null
 
 [node name="MeshInstance9" type="MeshInstance" parent="MaintenanceStairs/Section"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -0.6 )
+use_in_baked_light = true
 mesh = ExtResource( 11 )
 material/0 = null
 
 [node name="MeshInstance13" type="MeshInstance" parent="MaintenanceStairs/Section"]
 transform = Transform( 1, -3.09086e-08, 1.28028e-08, 3.09086e-08, 0.707107, -0.707107, 1.28028e-08, 0.707107, 0.707107, 0.35, 0, 0 )
+use_in_baked_light = true
 mesh = ExtResource( 12 )
 material/0 = null
 
 [node name="MeshInstance14" type="MeshInstance" parent="MaintenanceStairs/Section"]
 transform = Transform( 1, -3.09086e-08, 1.28028e-08, 3.09086e-08, 0.707107, -0.707107, 1.28028e-08, 0.707107, 0.707107, -0.35, 0, 0 )
+use_in_baked_light = true
 mesh = ExtResource( 12 )
 material/0 = null
 
 [node name="MeshInstance15" type="MeshInstance" parent="MaintenanceStairs/Section"]
 transform = Transform( 1, -3.09086e-08, 1.28028e-08, 3.09086e-08, 0.707107, -0.707107, 1.28028e-08, 0.707107, 0.707107, -0.35, 1, 0 )
+use_in_baked_light = true
 mesh = ExtResource( 14 )
 material/0 = null
 
 [node name="MeshInstance16" type="MeshInstance" parent="MaintenanceStairs/Section"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, -0.1, 0.6 )
+use_in_baked_light = true
 mesh = ExtResource( 15 )
 material/0 = null
 
 [node name="MeshInstance17" type="MeshInstance" parent="MaintenanceStairs/Section"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 0.3, 0.2 )
+use_in_baked_light = true
 mesh = ExtResource( 15 )
 material/0 = null
 
 [node name="MeshInstance18" type="MeshInstance" parent="MaintenanceStairs/Section"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 0.7, -0.2 )
+use_in_baked_light = true
 mesh = ExtResource( 15 )
 material/0 = null
 
 [node name="MeshInstance19" type="MeshInstance" parent="MaintenanceStairs/Section"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 1.1, -0.6 )
+use_in_baked_light = true
 mesh = ExtResource( 15 )
 material/0 = null
 
@@ -2711,71 +3192,85 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.375, 4, 4.76837e-07 )
 
 [node name="MeshInstance3" type="MeshInstance" parent="MaintenanceStairs/Section3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0.6 )
+use_in_baked_light = true
 mesh = ExtResource( 11 )
 material/0 = null
 
 [node name="MeshInstance4" type="MeshInstance" parent="MaintenanceStairs/Section3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0.4 )
+use_in_baked_light = true
 mesh = ExtResource( 11 )
 material/0 = null
 
 [node name="MeshInstance5" type="MeshInstance" parent="MaintenanceStairs/Section3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0.2 )
+use_in_baked_light = true
 mesh = ExtResource( 11 )
 material/0 = null
 
 [node name="MeshInstance6" type="MeshInstance" parent="MaintenanceStairs/Section3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.38419e-07, -2.38419e-07 )
+use_in_baked_light = true
 mesh = ExtResource( 11 )
 material/0 = null
 
 [node name="MeshInstance7" type="MeshInstance" parent="MaintenanceStairs/Section3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, -0.2 )
+use_in_baked_light = true
 mesh = ExtResource( 11 )
 material/0 = null
 
 [node name="MeshInstance8" type="MeshInstance" parent="MaintenanceStairs/Section3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, -0.4 )
+use_in_baked_light = true
 mesh = ExtResource( 11 )
 material/0 = null
 
 [node name="MeshInstance9" type="MeshInstance" parent="MaintenanceStairs/Section3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -0.6 )
+use_in_baked_light = true
 mesh = ExtResource( 11 )
 material/0 = null
 
 [node name="MeshInstance13" type="MeshInstance" parent="MaintenanceStairs/Section3"]
 transform = Transform( 1, -3.09086e-08, 1.28028e-08, 3.09086e-08, 0.707107, -0.707107, 1.28028e-08, 0.707107, 0.707107, 0.35, 0, 0 )
+use_in_baked_light = true
 mesh = ExtResource( 12 )
 material/0 = null
 
 [node name="MeshInstance14" type="MeshInstance" parent="MaintenanceStairs/Section3"]
 transform = Transform( 1, -3.09086e-08, 1.28028e-08, 3.09086e-08, 0.707107, -0.707107, 1.28028e-08, 0.707107, 0.707107, -0.35, 0, 0 )
+use_in_baked_light = true
 mesh = ExtResource( 12 )
 material/0 = null
 
 [node name="MeshInstance15" type="MeshInstance" parent="MaintenanceStairs/Section3"]
 transform = Transform( 1, -3.09086e-08, 1.28028e-08, 3.09086e-08, 0.707107, -0.707107, 1.28028e-08, 0.707107, 0.707107, -0.35, 1, 0 )
+use_in_baked_light = true
 mesh = ExtResource( 14 )
 material/0 = null
 
 [node name="MeshInstance16" type="MeshInstance" parent="MaintenanceStairs/Section3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, -0.1, 0.6 )
+use_in_baked_light = true
 mesh = ExtResource( 15 )
 material/0 = null
 
 [node name="MeshInstance17" type="MeshInstance" parent="MaintenanceStairs/Section3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 0.3, 0.2 )
+use_in_baked_light = true
 mesh = ExtResource( 15 )
 material/0 = null
 
 [node name="MeshInstance18" type="MeshInstance" parent="MaintenanceStairs/Section3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 0.7, -0.2 )
+use_in_baked_light = true
 mesh = ExtResource( 15 )
 material/0 = null
 
 [node name="MeshInstance19" type="MeshInstance" parent="MaintenanceStairs/Section3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 1.1, -0.6 )
+use_in_baked_light = true
 mesh = ExtResource( 15 )
 material/0 = null
 
@@ -2784,86 +3279,103 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.3750
 
 [node name="MeshInstance3" type="MeshInstance" parent="MaintenanceStairs/Section2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0.6 )
+use_in_baked_light = true
 mesh = ExtResource( 11 )
 material/0 = null
 
 [node name="MeshInstance4" type="MeshInstance" parent="MaintenanceStairs/Section2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0.4 )
+use_in_baked_light = true
 mesh = ExtResource( 11 )
 material/0 = null
 
 [node name="MeshInstance5" type="MeshInstance" parent="MaintenanceStairs/Section2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0.2 )
+use_in_baked_light = true
 mesh = ExtResource( 11 )
 material/0 = null
 
 [node name="MeshInstance6" type="MeshInstance" parent="MaintenanceStairs/Section2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.38419e-07, -2.38419e-07 )
+use_in_baked_light = true
 mesh = ExtResource( 11 )
 material/0 = null
 
 [node name="MeshInstance7" type="MeshInstance" parent="MaintenanceStairs/Section2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, -0.2 )
+use_in_baked_light = true
 mesh = ExtResource( 11 )
 material/0 = null
 
 [node name="MeshInstance8" type="MeshInstance" parent="MaintenanceStairs/Section2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, -0.4 )
+use_in_baked_light = true
 mesh = ExtResource( 11 )
 material/0 = null
 
 [node name="MeshInstance9" type="MeshInstance" parent="MaintenanceStairs/Section2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -0.6 )
+use_in_baked_light = true
 mesh = ExtResource( 11 )
 material/0 = null
 
 [node name="MeshInstance13" type="MeshInstance" parent="MaintenanceStairs/Section2"]
 transform = Transform( 1, -3.09086e-08, 1.28028e-08, 3.09086e-08, 0.707107, -0.707107, 1.28028e-08, 0.707107, 0.707107, 0.35, 0, 0 )
+use_in_baked_light = true
 mesh = ExtResource( 12 )
 material/0 = null
 
 [node name="MeshInstance14" type="MeshInstance" parent="MaintenanceStairs/Section2"]
 transform = Transform( 1, -3.09086e-08, 1.28028e-08, 3.09086e-08, 0.707107, -0.707107, 1.28028e-08, 0.707107, 0.707107, -0.35, 0, 0 )
+use_in_baked_light = true
 mesh = ExtResource( 12 )
 material/0 = null
 
 [node name="MeshInstance15" type="MeshInstance" parent="MaintenanceStairs/Section2"]
 transform = Transform( 1, -3.09086e-08, 1.28028e-08, 3.09086e-08, 0.707107, -0.707107, 1.28028e-08, 0.707107, 0.707107, -0.35, 1, 0 )
+use_in_baked_light = true
 mesh = ExtResource( 14 )
 material/0 = null
 
 [node name="MeshInstance16" type="MeshInstance" parent="MaintenanceStairs/Section2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, -0.1, 0.6 )
+use_in_baked_light = true
 mesh = ExtResource( 15 )
 material/0 = null
 
 [node name="MeshInstance17" type="MeshInstance" parent="MaintenanceStairs/Section2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 0.3, 0.2 )
+use_in_baked_light = true
 mesh = ExtResource( 15 )
 material/0 = null
 
 [node name="MeshInstance18" type="MeshInstance" parent="MaintenanceStairs/Section2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 0.7, -0.2 )
+use_in_baked_light = true
 mesh = ExtResource( 15 )
 material/0 = null
 
 [node name="MeshInstance19" type="MeshInstance" parent="MaintenanceStairs/Section2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 1.1, -0.6 )
+use_in_baked_light = true
 mesh = ExtResource( 15 )
 material/0 = null
 
 [node name="MeshInstance" type="MeshInstance" parent="MaintenanceStairs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.15256e-07, 1.6, -1.1 )
+use_in_baked_light = true
 mesh = ExtResource( 13 )
 material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="MaintenanceStairs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.15256e-07, 3.2, 1.1 )
+use_in_baked_light = true
 mesh = ExtResource( 13 )
 material/0 = null
 
 [node name="MeshInstance3" type="MeshInstance" parent="MaintenanceStairs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19209e-06, 4.8, -1.1 )
+use_in_baked_light = true
 mesh = ExtResource( 13 )
 material/0 = null
 
@@ -2874,171 +3386,205 @@ __meta__ = {
 
 [node name="MeshInstance" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.775, 3, 1.525 )
+use_in_baked_light = true
 mesh = SubResource( 6 )
 material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.775, 3, -1.525 )
+use_in_baked_light = true
 mesh = SubResource( 6 )
 material/0 = null
 
 [node name="MeshInstance3" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.775, 3, 0 )
+use_in_baked_light = true
 mesh = SubResource( 6 )
 material/0 = null
 
 [node name="MeshInstance4" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.775, 5.97, 0 )
+use_in_baked_light = true
 mesh = SubResource( 7 )
 material/0 = null
 
 [node name="MeshInstance5" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.775, 3.97, 0 )
+use_in_baked_light = true
 mesh = SubResource( 7 )
 material/0 = null
 
 [node name="MeshInstance6" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.775, 1.97, 0 )
+use_in_baked_light = true
 mesh = SubResource( 7 )
 material/0 = null
 
 [node name="MeshInstance7" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.775, 3, 0.125 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance8" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.775, 3, 0.225 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance9" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.774999, 3, 0.325 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance10" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.774998, 3, 0.425 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance11" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.775, 3, 0.525 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance12" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.774999, 3, 0.625 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance13" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.774998, 3, 0.725 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance14" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.774998, 3, 0.825 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance15" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.775, 3, 0.925 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance16" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.774999, 3, 1.025 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance17" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.774998, 3, 1.125 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance18" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.774998, 3, 1.225 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance19" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.774998, 3, 1.325 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance20" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.774998, 3, 1.425 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance21" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( -4.37114e-08, -3.82137e-15, 1, -8.74228e-08, 1, 0, 1, 8.74228e-08, 4.37114e-08, 0.775, 3, -0.125 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance22" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( -4.37114e-08, -3.82137e-15, 1, -8.74228e-08, 1, 0, 1, 8.74228e-08, 4.37114e-08, 0.774999, 3, -0.225 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance23" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( -4.37114e-08, -3.82137e-15, 1, -8.74228e-08, 1, 0, 1, 8.74228e-08, 4.37114e-08, 0.774998, 3, -0.325 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance24" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( -4.37114e-08, -3.82137e-15, 1, -8.74228e-08, 1, 0, 1, 8.74228e-08, 4.37114e-08, 0.774999, 3, -0.425 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance25" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( -4.37114e-08, -3.82137e-15, 1, -8.74228e-08, 1, 0, 1, 8.74228e-08, 4.37114e-08, 0.775, 3, -0.525 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance26" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( -4.37114e-08, -3.82137e-15, 1, -8.74228e-08, 1, 0, 1, 8.74228e-08, 4.37114e-08, 0.775, 3, -0.625 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance27" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( -4.37114e-08, -3.82137e-15, 1, -8.74228e-08, 1, 0, 1, 8.74228e-08, 4.37114e-08, 0.774998, 3, -0.725 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance28" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( -4.37114e-08, -3.82137e-15, 1, -8.74228e-08, 1, 0, 1, 8.74228e-08, 4.37114e-08, 0.774998, 3, -0.825 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance29" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( -4.37114e-08, -3.82137e-15, 1, -8.74228e-08, 1, 0, 1, 8.74228e-08, 4.37114e-08, 0.775, 3, -0.925 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance30" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( -4.37114e-08, -3.82137e-15, 1, -8.74228e-08, 1, 0, 1, 8.74228e-08, 4.37114e-08, 0.775, 3, -1.025 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance31" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( -4.37114e-08, -3.82137e-15, 1, -8.74228e-08, 1, 0, 1, 8.74228e-08, 4.37114e-08, 0.774999, 3, -1.125 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance32" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( -4.37114e-08, -3.82137e-15, 1, -8.74228e-08, 1, 0, 1, 8.74228e-08, 4.37114e-08, 0.774998, 3, -1.225 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance33" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( -4.37114e-08, -3.82137e-15, 1, -8.74228e-08, 1, 0, 1, 8.74228e-08, 4.37114e-08, 0.774998, 3, -1.325 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance34" type="MeshInstance" parent="MaintenanceStairs/SideFence"]
 transform = Transform( -4.37114e-08, -3.82137e-15, 1, -8.74228e-08, 1, 0, 1, 8.74228e-08, 4.37114e-08, 0.774998, 3, -1.425 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
@@ -3050,171 +3596,205 @@ __meta__ = {
 
 [node name="MeshInstance" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.775, 3, 1.525 )
+use_in_baked_light = true
 mesh = SubResource( 6 )
 material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.775, 3, -1.525 )
+use_in_baked_light = true
 mesh = SubResource( 6 )
 material/0 = null
 
 [node name="MeshInstance3" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.775, 3, 0 )
+use_in_baked_light = true
 mesh = SubResource( 6 )
 material/0 = null
 
 [node name="MeshInstance4" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.775, 5.97, 0 )
+use_in_baked_light = true
 mesh = SubResource( 7 )
 material/0 = null
 
 [node name="MeshInstance5" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.775, 3.97, 0 )
+use_in_baked_light = true
 mesh = SubResource( 7 )
 material/0 = null
 
 [node name="MeshInstance6" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.775, 1.97, 0 )
+use_in_baked_light = true
 mesh = SubResource( 7 )
 material/0 = null
 
 [node name="MeshInstance7" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.775, 3, 0.125 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance8" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.775, 3, 0.225 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance9" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.774999, 3, 0.325 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance10" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.774998, 3, 0.425 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance11" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.775, 3, 0.525 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance12" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.774999, 3, 0.625 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance13" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.774998, 3, 0.725 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance14" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.774998, 3, 0.825 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance15" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.775, 3, 0.925 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance16" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.774999, 3, 1.025 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance17" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.774998, 3, 1.125 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance18" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.774998, 3, 1.225 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance19" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.774998, 3, 1.325 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance20" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.774998, 3, 1.425 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance21" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( -4.37114e-08, -3.82137e-15, 1, -8.74228e-08, 1, 0, 1, 8.74228e-08, 4.37114e-08, 0.775, 3, -0.125 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance22" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( -4.37114e-08, -3.82137e-15, 1, -8.74228e-08, 1, 0, 1, 8.74228e-08, 4.37114e-08, 0.774999, 3, -0.225 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance23" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( -4.37114e-08, -3.82137e-15, 1, -8.74228e-08, 1, 0, 1, 8.74228e-08, 4.37114e-08, 0.774998, 3, -0.325 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance24" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( -4.37114e-08, -3.82137e-15, 1, -8.74228e-08, 1, 0, 1, 8.74228e-08, 4.37114e-08, 0.774999, 3, -0.425 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance25" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( -4.37114e-08, -3.82137e-15, 1, -8.74228e-08, 1, 0, 1, 8.74228e-08, 4.37114e-08, 0.775, 3, -0.525 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance26" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( -4.37114e-08, -3.82137e-15, 1, -8.74228e-08, 1, 0, 1, 8.74228e-08, 4.37114e-08, 0.775, 3, -0.625 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance27" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( -4.37114e-08, -3.82137e-15, 1, -8.74228e-08, 1, 0, 1, 8.74228e-08, 4.37114e-08, 0.774998, 3, -0.725 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance28" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( -4.37114e-08, -3.82137e-15, 1, -8.74228e-08, 1, 0, 1, 8.74228e-08, 4.37114e-08, 0.774998, 3, -0.825 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance29" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( -4.37114e-08, -3.82137e-15, 1, -8.74228e-08, 1, 0, 1, 8.74228e-08, 4.37114e-08, 0.775, 3, -0.925 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance30" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( -4.37114e-08, -3.82137e-15, 1, -8.74228e-08, 1, 0, 1, 8.74228e-08, 4.37114e-08, 0.775, 3, -1.025 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance31" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( -4.37114e-08, -3.82137e-15, 1, -8.74228e-08, 1, 0, 1, 8.74228e-08, 4.37114e-08, 0.774999, 3, -1.125 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance32" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( -4.37114e-08, -3.82137e-15, 1, -8.74228e-08, 1, 0, 1, 8.74228e-08, 4.37114e-08, 0.774998, 3, -1.225 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance33" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( -4.37114e-08, -3.82137e-15, 1, -8.74228e-08, 1, 0, 1, 8.74228e-08, 4.37114e-08, 0.774998, 3, -1.325 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance34" type="MeshInstance" parent="MaintenanceStairs/SideFence2"]
 transform = Transform( -4.37114e-08, -3.82137e-15, 1, -8.74228e-08, 1, 0, 1, 8.74228e-08, 4.37114e-08, 0.774998, 3, -1.425 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
@@ -3222,91 +3802,109 @@ material/0 = null
 
 [node name="MeshInstance" type="MeshInstance" parent="MaintenanceStairs/FrontFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 1.525 )
+use_in_baked_light = true
 mesh = SubResource( 6 )
 material/0 = null
 
 [node name="MeshInstance4" type="MeshInstance" parent="MaintenanceStairs/FrontFence"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 5.97, 1.525 )
-mesh = SubResource( 9 )
+use_in_baked_light = true
+mesh = SubResource( 8 )
 material/0 = null
 
 [node name="MeshInstance5" type="MeshInstance" parent="MaintenanceStairs/FrontFence"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.76837e-07, 3.97, 1.525 )
-mesh = SubResource( 9 )
+use_in_baked_light = true
+mesh = SubResource( 8 )
 material/0 = null
 
 [node name="MeshInstance6" type="MeshInstance" parent="MaintenanceStairs/FrontFence"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9.53674e-07, 1.97, 1.525 )
-mesh = SubResource( 9 )
+use_in_baked_light = true
+mesh = SubResource( 8 )
 material/0 = null
 
 [node name="MeshInstance7" type="MeshInstance" parent="MaintenanceStairs/FrontFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100001, 3, 1.525 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance8" type="MeshInstance" parent="MaintenanceStairs/FrontFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.200001, 3, 1.525 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance9" type="MeshInstance" parent="MaintenanceStairs/FrontFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 3, 1.525 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance10" type="MeshInstance" parent="MaintenanceStairs/FrontFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 3, 1.525 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance11" type="MeshInstance" parent="MaintenanceStairs/FrontFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 3, 1.525 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance12" type="MeshInstance" parent="MaintenanceStairs/FrontFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 3, 1.525 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance13" type="MeshInstance" parent="MaintenanceStairs/FrontFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 3, 1.525 )
+use_in_baked_light = true
 mesh = ExtResource( 33 )
 material/0 = null
 
 [node name="MeshInstance14" type="MeshInstance" parent="MaintenanceStairs/FrontFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0999997, 4, 1.525 )
+use_in_baked_light = true
 mesh = ExtResource( 34 )
 material/0 = null
 
 [node name="MeshInstance15" type="MeshInstance" parent="MaintenanceStairs/FrontFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.199999, 4, 1.525 )
+use_in_baked_light = true
 mesh = ExtResource( 34 )
 material/0 = null
 
 [node name="MeshInstance16" type="MeshInstance" parent="MaintenanceStairs/FrontFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299999, 4, 1.525 )
+use_in_baked_light = true
 mesh = ExtResource( 34 )
 material/0 = null
 
 [node name="MeshInstance17" type="MeshInstance" parent="MaintenanceStairs/FrontFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.399998, 4, 1.525 )
+use_in_baked_light = true
 mesh = ExtResource( 34 )
 material/0 = null
 
 [node name="MeshInstance18" type="MeshInstance" parent="MaintenanceStairs/FrontFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499997, 4, 1.525 )
+use_in_baked_light = true
 mesh = ExtResource( 34 )
 material/0 = null
 
 [node name="MeshInstance19" type="MeshInstance" parent="MaintenanceStairs/FrontFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.599997, 4, 1.525 )
+use_in_baked_light = true
 mesh = ExtResource( 34 )
 material/0 = null
 
 [node name="MeshInstance20" type="MeshInstance" parent="MaintenanceStairs/FrontFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699996, 4, 1.525 )
+use_in_baked_light = true
 mesh = ExtResource( 34 )
 material/0 = null
 
@@ -3315,86 +3913,103 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.3841
 
 [node name="MeshInstance" type="MeshInstance" parent="MaintenanceStairs/BackFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 1.525 )
-mesh = SubResource( 14 )
+use_in_baked_light = true
+mesh = SubResource( 9 )
 material/0 = null
 
 [node name="MeshInstance5" type="MeshInstance" parent="MaintenanceStairs/BackFence"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.76837e-07, 3.97, 1.525 )
-mesh = SubResource( 9 )
+use_in_baked_light = true
+mesh = SubResource( 8 )
 material/0 = null
 
 [node name="MeshInstance6" type="MeshInstance" parent="MaintenanceStairs/BackFence"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9.53674e-07, 1.97, 1.525 )
-mesh = SubResource( 9 )
+use_in_baked_light = true
+mesh = SubResource( 8 )
 material/0 = null
 
 [node name="MeshInstance14" type="MeshInstance" parent="MaintenanceStairs/BackFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0999997, 2, 1.525 )
+use_in_baked_light = true
 mesh = ExtResource( 34 )
 material/0 = null
 
 [node name="MeshInstance15" type="MeshInstance" parent="MaintenanceStairs/BackFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.199999, 2, 1.525 )
+use_in_baked_light = true
 mesh = ExtResource( 34 )
 material/0 = null
 
 [node name="MeshInstance16" type="MeshInstance" parent="MaintenanceStairs/BackFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299999, 2, 1.525 )
+use_in_baked_light = true
 mesh = ExtResource( 34 )
 material/0 = null
 
 [node name="MeshInstance17" type="MeshInstance" parent="MaintenanceStairs/BackFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.399997, 2, 1.525 )
+use_in_baked_light = true
 mesh = ExtResource( 34 )
 material/0 = null
 
 [node name="MeshInstance18" type="MeshInstance" parent="MaintenanceStairs/BackFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499997, 2, 1.525 )
+use_in_baked_light = true
 mesh = ExtResource( 34 )
 material/0 = null
 
 [node name="MeshInstance19" type="MeshInstance" parent="MaintenanceStairs/BackFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.599996, 2, 1.525 )
+use_in_baked_light = true
 mesh = ExtResource( 34 )
 material/0 = null
 
 [node name="MeshInstance20" type="MeshInstance" parent="MaintenanceStairs/BackFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699997, 2, 1.525 )
+use_in_baked_light = true
 mesh = ExtResource( 34 )
 material/0 = null
 
 [node name="MeshInstance21" type="MeshInstance" parent="MaintenanceStairs/BackFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 2, 1.525 )
+use_in_baked_light = true
 mesh = ExtResource( 34 )
 material/0 = null
 
 [node name="MeshInstance22" type="MeshInstance" parent="MaintenanceStairs/BackFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.600001, 2, 1.525 )
+use_in_baked_light = true
 mesh = ExtResource( 34 )
 material/0 = null
 
 [node name="MeshInstance23" type="MeshInstance" parent="MaintenanceStairs/BackFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.500001, 2, 1.525 )
+use_in_baked_light = true
 mesh = ExtResource( 34 )
 material/0 = null
 
 [node name="MeshInstance24" type="MeshInstance" parent="MaintenanceStairs/BackFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400002, 2, 1.525 )
+use_in_baked_light = true
 mesh = ExtResource( 34 )
 material/0 = null
 
 [node name="MeshInstance25" type="MeshInstance" parent="MaintenanceStairs/BackFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.300003, 2, 1.525 )
+use_in_baked_light = true
 mesh = ExtResource( 34 )
 material/0 = null
 
 [node name="MeshInstance26" type="MeshInstance" parent="MaintenanceStairs/BackFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.200004, 2, 1.525 )
+use_in_baked_light = true
 mesh = ExtResource( 34 )
 material/0 = null
 
 [node name="MeshInstance27" type="MeshInstance" parent="MaintenanceStairs/BackFence"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100003, 2, 1.525 )
+use_in_baked_light = true
 mesh = ExtResource( 34 )
 material/0 = null
 
@@ -3403,84 +4018,102 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.388, 0, 1.525 )
 
 [node name="MeshInstance" type="MeshInstance" parent="MaintenanceStairs/Gate"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0 )
-mesh = SubResource( 13 )
+use_in_baked_light = true
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="MaintenanceStairs/Gate"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0 )
-mesh = SubResource( 10 )
+use_in_baked_light = true
+mesh = SubResource( 11 )
 material/0 = null
 
 [node name="MeshInstance3" type="MeshInstance" parent="MaintenanceStairs/Gate"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9, 0 )
-mesh = SubResource( 10 )
+use_in_baked_light = true
+mesh = SubResource( 11 )
 material/0 = null
 
 [node name="MeshInstance4" type="MeshInstance" parent="MaintenanceStairs/Gate"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.325, 0.975, 0 )
-mesh = SubResource( 11 )
+use_in_baked_light = true
+mesh = SubResource( 12 )
 material/0 = null
 
 [node name="MeshInstance5" type="MeshInstance" parent="MaintenanceStairs/Gate"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.325, 0.975, 0 )
-mesh = SubResource( 11 )
+use_in_baked_light = true
+mesh = SubResource( 12 )
 material/0 = null
 
 [node name="MeshInstance6" type="MeshInstance" parent="MaintenanceStairs/Gate"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.975, 0 )
-mesh = SubResource( 12 )
+use_in_baked_light = true
+mesh = SubResource( 13 )
 material/0 = null
 
 [node name="MeshInstance7" type="MeshInstance" parent="MaintenanceStairs/Gate"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0999999, 0.975, 0 )
-mesh = SubResource( 12 )
+use_in_baked_light = true
+mesh = SubResource( 13 )
 material/0 = null
 
 [node name="MeshInstance8" type="MeshInstance" parent="MaintenanceStairs/Gate"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.975, 0 )
-mesh = SubResource( 12 )
+use_in_baked_light = true
+mesh = SubResource( 13 )
 material/0 = null
 
 [node name="MeshInstance9" type="MeshInstance" parent="MaintenanceStairs/Gate"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.975, 0 )
-mesh = SubResource( 12 )
+use_in_baked_light = true
+mesh = SubResource( 13 )
 material/0 = null
 
 [node name="MeshInstance10" type="MeshInstance" parent="MaintenanceStairs/Gate"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.975, 0 )
-mesh = SubResource( 12 )
+use_in_baked_light = true
+mesh = SubResource( 13 )
 material/0 = null
 
 [node name="Wall1" type="MeshInstance" parent="."]
 transform = Transform( -4.37114e-08, 0, 1, 1, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, 1.91069e-15, -5, 1.9, 21.5 )
+use_in_baked_light = true
 mesh = ExtResource( 29 )
 material/0 = null
 
 [node name="Wall2" type="MeshInstance" parent="."]
 transform = Transform( -4.37114e-08, 0, 1, 1, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, 1.91069e-15, -5, 1.9, -21.5 )
+use_in_baked_light = true
 mesh = ExtResource( 29 )
 material/0 = null
 
+[node name="SmallLamp" parent="Wall2" instance=ExtResource( 39 )]
+transform = Transform( 4.37114e-08, 1, -4.37114e-08, 8.74228e-08, -4.37114e-08, -1, -1, 4.37114e-08, -8.74228e-08, 0.550001, 15.95, 4.05 )
+
 [node name="Post" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 2.5, 5 )
-mesh = SubResource( 15 )
+use_in_baked_light = true
+mesh = SubResource( 14 )
 material/0 = null
 
 [node name="Streetlamp" parent="Post" instance=ExtResource( 36 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12, 0, 0 )
 
 [node name="Post2" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 2.5, 17.5 )
-mesh = SubResource( 15 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 2.5, 19.5 )
+use_in_baked_light = true
+mesh = SubResource( 14 )
 material/0 = null
 
 [node name="Streetlamp" parent="Post2" instance=ExtResource( 36 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12, 0, 0 )
 
 [node name="Streetlamp2" parent="." instance=ExtResource( 36 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.56, 2.5, 2.9 )
 
 [node name="Terrain" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+use_in_baked_light = true
 width = 80.0
 depth = 80.0
 material = ExtResource( 16 )
@@ -3490,6 +4123,7 @@ __meta__ = {
 
 [node name="Street1" type="CSGBox" parent="Terrain"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0 )
+use_in_baked_light = true
 operation = 2
 width = 22.0
 height = 0.1
@@ -3498,6 +4132,7 @@ material = ExtResource( 17 )
 
 [node name="Street4" type="CSGBox" parent="Terrain"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 1, 0 )
+use_in_baked_light = true
 operation = 2
 width = 22.0
 height = 0.1
@@ -3506,6 +4141,7 @@ material = ExtResource( 17 )
 
 [node name="Street2" type="CSGBox" parent="Terrain"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.5, 1, 17.5 )
+use_in_baked_light = true
 operation = 2
 width = 40.0
 height = 0.1
@@ -3514,6 +4150,7 @@ material = ExtResource( 17 )
 
 [node name="StreetBevelCorner4" type="CSGBox" parent="Terrain/Street2"]
 transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 20, 0, 2.5 )
+use_in_baked_light = true
 operation = 2
 width = 4.0
 height = 0.1
@@ -3523,6 +4160,7 @@ material = ExtResource( 17 )
 [node name="StreetCurve1" type="CSGCylinder" parent="Terrain"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1, -0.5 )
 visible = false
+use_in_baked_light = true
 operation = 2
 radius = 2.0
 height = 0.1
@@ -3531,12 +4169,14 @@ material = ExtResource( 17 )
 
 [node name="StreetCurve3" type="CSGBox" parent="Terrain/StreetCurve1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1 )
+use_in_baked_light = true
 width = 4.0
 height = 0.1
 material = ExtResource( 17 )
 
 [node name="StreetCurve4" type="CSGBox" parent="Terrain/StreetCurve1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.25, 0, 1.75 )
+use_in_baked_light = true
 width = 2.5
 height = 0.1
 depth = 5.5
@@ -3545,6 +4185,7 @@ material = ExtResource( 17 )
 [node name="StreetCurveCorner" type="CSGCylinder" parent="Terrain"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0.95, 4 )
 visible = false
+use_in_baked_light = true
 radius = 1.5
 height = 0.1
 sides = 32
@@ -3552,6 +4193,7 @@ material = ExtResource( 16 )
 
 [node name="CSGBox" type="CSGBox" parent="Terrain/StreetCurveCorner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0 )
+use_in_baked_light = true
 operation = 2
 width = 1.5
 height = 1.0
@@ -3559,6 +4201,7 @@ depth = 3.0
 
 [node name="CSGBox2" type="CSGBox" parent="Terrain/StreetCurveCorner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0, 0.75 )
+use_in_baked_light = true
 operation = 2
 width = 1.5
 height = 1.0
@@ -3566,6 +4209,7 @@ depth = 1.5
 
 [node name="Street3" type="CSGBox" parent="Terrain"]
 transform = Transform( -1.58932e-08, 0, 1, 0, 1, 0, -1, 0, -1.58932e-08, 20, 1, 8.39 )
+use_in_baked_light = true
 operation = 2
 width = 5.0
 height = 0.1
@@ -3574,6 +4218,7 @@ material = ExtResource( 17 )
 
 [node name="StreetBevelCorner1" type="CSGBox" parent="Terrain"]
 transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 15, 1, 5.89 )
+use_in_baked_light = true
 operation = 2
 width = 3.0
 height = 0.1
@@ -3582,6 +4227,7 @@ material = ExtResource( 17 )
 
 [node name="StreetBevelCorner2" type="CSGBox" parent="Terrain"]
 transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 15, 1, 10.89 )
+use_in_baked_light = true
 operation = 2
 width = 3.0
 height = 0.1
@@ -3590,8 +4236,400 @@ material = ExtResource( 17 )
 
 [node name="StreetBevelCorner3" type="CSGBox" parent="Terrain"]
 transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 10, 1, 2.5 )
+use_in_baked_light = true
 operation = 2
 width = 3.0
 height = 0.1
 depth = 2.5
 material = ExtResource( 17 )
+
+[node name="BikeRack" type="Spatial" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8.5, 0, 6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="BikeRack"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.375, 0 )
+use_in_baked_light = true
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="BikeRack"]
+transform = Transform( 0.963097, 0.269155, 0, -0.269155, 0.963097, 0, 0, 0, 1, -0.128, 0.623, 0 )
+use_in_baked_light = true
+mesh = SubResource( 22 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="BikeRack"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.275, 0 )
+use_in_baked_light = true
+mesh = SubResource( 21 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="BikeRack"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.375, -0.5 )
+use_in_baked_light = true
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="BikeRack"]
+transform = Transform( 0.963097, 0.269155, 0, -0.269155, 0.963097, 0, 0, 0, 1, -0.128, 0.623, -0.5 )
+use_in_baked_light = true
+mesh = SubResource( 22 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="BikeRack"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.275, -0.5 )
+use_in_baked_light = true
+mesh = SubResource( 21 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="BikeRack"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.375, -1 )
+use_in_baked_light = true
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="MeshInstance8" type="MeshInstance" parent="BikeRack"]
+transform = Transform( 0.963097, 0.269155, 0, -0.269155, 0.963097, 0, 0, 0, 1, -0.128, 0.623, -1 )
+use_in_baked_light = true
+mesh = SubResource( 22 )
+material/0 = null
+
+[node name="MeshInstance9" type="MeshInstance" parent="BikeRack"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.275, -1 )
+use_in_baked_light = true
+mesh = SubResource( 21 )
+material/0 = null
+
+[node name="MeshInstance10" type="MeshInstance" parent="BikeRack"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.375, -1.5 )
+use_in_baked_light = true
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="MeshInstance11" type="MeshInstance" parent="BikeRack"]
+transform = Transform( 0.963097, 0.269155, 0, -0.269155, 0.963097, 0, 0, 0, 1, -0.128, 0.623, -1.5 )
+use_in_baked_light = true
+mesh = SubResource( 22 )
+material/0 = null
+
+[node name="MeshInstance12" type="MeshInstance" parent="BikeRack"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.275, -1.5 )
+use_in_baked_light = true
+mesh = SubResource( 21 )
+material/0 = null
+
+[node name="MeshInstance13" type="MeshInstance" parent="BikeRack"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.375, -2 )
+use_in_baked_light = true
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="MeshInstance14" type="MeshInstance" parent="BikeRack"]
+transform = Transform( 0.963097, 0.269155, 0, -0.269155, 0.963097, 0, 0, 0, 1, -0.128, 0.623, -2 )
+use_in_baked_light = true
+mesh = SubResource( 22 )
+material/0 = null
+
+[node name="MeshInstance15" type="MeshInstance" parent="BikeRack"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.275, -2 )
+use_in_baked_light = true
+mesh = SubResource( 21 )
+material/0 = null
+
+[node name="BikeRack2" type="Spatial" parent="."]
+transform = Transform( 1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 6, 0, 15.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="BikeRack2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.375, 0 )
+use_in_baked_light = true
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="BikeRack2"]
+transform = Transform( 0.963097, 0.269155, 0, -0.269155, 0.963097, 0, 0, 0, 1, -0.128, 0.623, 0 )
+use_in_baked_light = true
+mesh = SubResource( 22 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="BikeRack2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.275, 0 )
+use_in_baked_light = true
+mesh = SubResource( 21 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="BikeRack2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.375, -0.5 )
+use_in_baked_light = true
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="BikeRack2"]
+transform = Transform( 0.963097, 0.269155, 0, -0.269155, 0.963097, 0, 0, 0, 1, -0.128, 0.623, -0.5 )
+use_in_baked_light = true
+mesh = SubResource( 22 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="BikeRack2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.275, -0.5 )
+use_in_baked_light = true
+mesh = SubResource( 21 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="BikeRack2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.375, -1 )
+use_in_baked_light = true
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="MeshInstance8" type="MeshInstance" parent="BikeRack2"]
+transform = Transform( 0.963097, 0.269155, 0, -0.269155, 0.963097, 0, 0, 0, 1, -0.128, 0.623, -1 )
+use_in_baked_light = true
+mesh = SubResource( 22 )
+material/0 = null
+
+[node name="MeshInstance9" type="MeshInstance" parent="BikeRack2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.275, -1 )
+use_in_baked_light = true
+mesh = SubResource( 21 )
+material/0 = null
+
+[node name="MeshInstance10" type="MeshInstance" parent="BikeRack2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.375, -1.5 )
+use_in_baked_light = true
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="MeshInstance11" type="MeshInstance" parent="BikeRack2"]
+transform = Transform( 0.963097, 0.269155, 0, -0.269155, 0.963097, 0, 0, 0, 1, -0.128, 0.623, -1.5 )
+use_in_baked_light = true
+mesh = SubResource( 22 )
+material/0 = null
+
+[node name="MeshInstance12" type="MeshInstance" parent="BikeRack2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.275, -1.5 )
+use_in_baked_light = true
+mesh = SubResource( 21 )
+material/0 = null
+
+[node name="MeshInstance13" type="MeshInstance" parent="BikeRack2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.375, -2 )
+use_in_baked_light = true
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="MeshInstance14" type="MeshInstance" parent="BikeRack2"]
+transform = Transform( 0.963097, 0.269155, 0, -0.269155, 0.963097, 0, 0, 0, 1, -0.128, 0.623, -2 )
+use_in_baked_light = true
+mesh = SubResource( 22 )
+material/0 = null
+
+[node name="MeshInstance15" type="MeshInstance" parent="BikeRack2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.275, -2 )
+use_in_baked_light = true
+mesh = SubResource( 21 )
+material/0 = null
+
+[node name="Bench" type="Spatial" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 0, 9 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Bench"]
+transform = Transform( 1, 0, 0, 0, 0.99863, 0.052336, 0, -0.052336, 0.99863, 0, 0.389573, 0 )
+use_in_baked_light = true
+mesh = SubResource( 23 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Bench"]
+transform = Transform( 1, 4.52671e-08, -3.56857e-08, -4.33374e-08, 0.182236, -0.983255, -3.80059e-08, 0.983255, 0.182236, 0, 0.689574, -0.2 )
+use_in_baked_light = true
+mesh = SubResource( 24 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="Bench"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.174573, -0.0500002 )
+use_in_baked_light = true
+mesh = SubResource( 25 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="Bench"]
+transform = Transform( 1, 0, 0, 0, 0.983255, 0.182236, 0, -0.182236, 0.983255, 0.5, 0.499573, -0.23 )
+use_in_baked_light = true
+mesh = SubResource( 26 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="Bench"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.174573, -0.0500002 )
+use_in_baked_light = true
+mesh = SubResource( 25 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="Bench"]
+transform = Transform( 1, 0, 0, 0, 0.983255, 0.182236, 0, -0.182236, 0.983255, -0.5, 0.499573, -0.23 )
+use_in_baked_light = true
+mesh = SubResource( 26 )
+material/0 = null
+
+[node name="Bin" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.3, 7.65 )
+use_in_baked_light = true
+width = 0.35
+height = 0.6
+depth = 0.35
+material = ExtResource( 41 )
+
+[node name="CSGBox" type="CSGBox" parent="Bin"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0 )
+use_in_baked_light = true
+operation = 2
+width = 0.25
+height = 0.6
+depth = 0.25
+material = ExtResource( 42 )
+
+[node name="BinLarge" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.6, -3.85 )
+use_in_baked_light = true
+width = 0.6
+height = 1.2
+depth = 0.6
+material = ExtResource( 45 )
+
+[node name="CSGBox" type="CSGBox" parent="BinLarge"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0 )
+use_in_baked_light = true
+width = 0.5
+height = 0.1
+depth = 0.5
+material = ExtResource( 45 )
+
+[node name="CSGBox2" type="CSGBox" parent="BinLarge"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.695, 0 )
+use_in_baked_light = true
+width = 0.05
+height = 0.09
+depth = 0.17
+material = ExtResource( 45 )
+
+[node name="CSGBox3" type="CSGBox" parent="BinLarge/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0 )
+use_in_baked_light = true
+operation = 2
+width = 0.05
+height = 0.07
+depth = 0.13
+material = ExtResource( 45 )
+
+[node name="BinLarge2" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.6, -4.55 )
+use_in_baked_light = true
+width = 0.6
+height = 1.2
+depth = 0.6
+material = ExtResource( 45 )
+
+[node name="CSGBox" type="CSGBox" parent="BinLarge2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0 )
+use_in_baked_light = true
+width = 0.5
+height = 0.1
+depth = 0.5
+material = ExtResource( 45 )
+
+[node name="CSGBox2" type="CSGBox" parent="BinLarge2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.695, 0 )
+use_in_baked_light = true
+width = 0.05
+height = 0.09
+depth = 0.17
+material = ExtResource( 45 )
+
+[node name="CSGBox3" type="CSGBox" parent="BinLarge2/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0 )
+use_in_baked_light = true
+operation = 2
+width = 0.05
+height = 0.07
+depth = 0.13
+material = ExtResource( 45 )
+
+[node name="BinLarge3" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.6, -5.25 )
+use_in_baked_light = true
+width = 0.6
+height = 1.2
+depth = 0.6
+material = ExtResource( 45 )
+
+[node name="CSGBox" type="CSGBox" parent="BinLarge3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0 )
+use_in_baked_light = true
+width = 0.5
+height = 0.1
+depth = 0.5
+material = ExtResource( 45 )
+
+[node name="CSGBox2" type="CSGBox" parent="BinLarge3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.695, 0 )
+use_in_baked_light = true
+width = 0.05
+height = 0.09
+depth = 0.17
+material = ExtResource( 45 )
+
+[node name="CSGBox3" type="CSGBox" parent="BinLarge3/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0 )
+use_in_baked_light = true
+operation = 2
+width = 0.05
+height = 0.07
+depth = 0.13
+material = ExtResource( 45 )
+
+[node name="BinLarge4" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.6, -5.95 )
+use_in_baked_light = true
+width = 0.6
+height = 1.2
+depth = 0.6
+material = ExtResource( 45 )
+
+[node name="CSGBox" type="CSGBox" parent="BinLarge4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0 )
+use_in_baked_light = true
+width = 0.5
+height = 0.1
+depth = 0.5
+material = ExtResource( 45 )
+
+[node name="CSGBox2" type="CSGBox" parent="BinLarge4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.695, 0 )
+use_in_baked_light = true
+width = 0.05
+height = 0.09
+depth = 0.17
+material = ExtResource( 45 )
+
+[node name="CSGBox3" type="CSGBox" parent="BinLarge4/CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0 )
+use_in_baked_light = true
+operation = 2
+width = 0.05
+height = 0.07
+depth = 0.13
+material = ExtResource( 45 )
+
+[node name="Bin2" type="CSGBox" parent="."]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 15.5, 0.3, 4.15 )
+use_in_baked_light = true
+width = 0.35
+height = 0.6
+depth = 0.35
+material = ExtResource( 41 )
+
+[node name="CSGBox" type="CSGBox" parent="Bin2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0 )
+use_in_baked_light = true
+operation = 2
+width = 0.25
+height = 0.6
+depth = 0.25
+material = ExtResource( 42 )
