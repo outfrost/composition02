@@ -8,6 +8,8 @@ Decorated with the Ludum Dare logo, it can be your wallpaper, stream background,
 
 If you download the project or one of the executable packages, or play the MP4 video, you will also see a cool animation :)
 
+Press <kbd>F11</kbd> for fullscreen.
+
 See [releases](https://github.com/outfrost/composition02/releases) for HD and UltraHD wallpapers, and other downloads.
 
 ## License
