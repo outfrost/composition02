@@ -1,0 +1,7 @@
+[gd_resource type="SpatialMaterial" format=2]
+
+[resource]
+albedo_color = Color( 0.121569, 0.184314, 0.25098, 1 )
+metallic = 0.25
+metallic_specular = 0.7
+roughness = 0.6
