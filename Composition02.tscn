@@ -186,6 +186,13 @@ size = Vector3( 8, 9, 20 )
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 38 )
 
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.534352, 0.0294992, 0.844747, 0, 0.999391, -0.0348995, -0.845262, 0.0186486, 0.534027, 17.612, 2.4, 10.419 )
+keep_aspect = 0
+current = true
+fov = 105.0
+far = 500.0
+
 [node name="Tunnel" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.9, 0 )
 use_in_baked_light = true
@@ -3076,7 +3083,7 @@ mesh = SubResource( 10 )
 material/0 = null
 
 [node name="Building5" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, -1, 19.45, 3, 19.5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, -1, 19.45, 3, 19.3 )
 use_in_baked_light = true
 width = 8.0
 height = 6.0
